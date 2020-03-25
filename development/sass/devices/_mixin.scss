@@ -1,0 +1,178 @@
+// set Left Right Template Mobile
+@mixin setLeftRightMobile{
+  div.main_content {
+      div.left{
+        float: none;
+          width: 100%;
+          margin-bottom: 1em;
+      }
+
+      div.right{
+        float: none;
+          width: 100%;
+          margin-bottom: 1em;
+        margin-left: 0;
+      }
+    }
+}
+// set Cart Template Mobile
+@mixin setCartMobile{
+  .gh_flex {
+      @include flex-wrap(wrap);
+
+      .left_gh{
+        float: none;
+          width: 100%;
+          margin-bottom: 1em;
+          margin-right: 0;
+          flex: unset;
+      }
+      
+      .right_gh{
+        float: none;
+          width: 100%;
+          margin-bottom: 1em;
+      }
+    }
+}
+// set Product Template Mobile
+@mixin setProductMobile{
+  .wap_pro{
+      @include flex-wrap(wrap);
+    }
+
+    .product_info, .zoom_slick{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+/*========= COMMON ===============*/
+@mixin setIdxTitleSize(){
+  .idx-tit{
+    h4{
+      @include font-size(24, 16);
+
+      &:before, &:after{
+        display: none;
+      }
+    }
+  }
+  .tin-video-bg .tin-video-wrap .title{
+    @include font-size(24, 16);
+  }
+  }
+/*========= HEADER ===============*/
+@mixin setHeaderCenter(){
+  .hd-top, #search{
+    display: none;
+  }
+  #slideshow{
+    margin-left: unset;
+  }
+}
+/*========= MENU ===============*/
+@mixin showMobileMenu(){
+  .nav-bg {
+    display: none;
+  }
+  #valak_mmenu{
+    display: flex;
+    background-color: $bg-header-top;
+  }
+  .toolbar{
+    background-color: $bg-header-top !important; 
+  }
+  .logo_valak{
+    background-color: $bg-header-top !important; 
+  }
+  .hd-bg{
+    display: block;
+  }
+}
+/*========= HOME ===============*/
+@mixin setProductDanhmuc($p_prodmCol: 3){
+  .spnoibat-flex {
+    .feature-img{
+      display: none;
+    }
+  }
+  .idx-tit h4::after{
+    display: none;
+  }
+  .idx-tit h4{
+    padding: 0 10px;
+  }
+}
+@mixin setTaiSaoFull(){
+  .taisao-bg {
+      .taisao-box {
+        width: 100% !important;
+        float: none !important;
+        &:before {
+          display: none;
+        }
+      }
+    }
+}
+@mixin setTinVideoFull(){
+  .tin-video-bg {
+      .tin-video-wrap {
+        .tin-bg {
+          width: 100%;
+          float: none;
+        }
+        .video-bg {
+          width: 100%;
+          float: none;
+        }
+      }
+    }
+}
+/*========= PRODUCT ===============*/
+@mixin setProductColumnMobile($p_col: 6, $p_gutter: 0){
+  .pr-box,.spnoibat-flex .product-grid .pr-box{
+    @include grid-col($col: $p_col, $grid-columns: 12, $col-offset: null, $gutter: $p_gutter);  
+  }
+}
+/*========= NEW ===============*/
+@mixin setNewColumnMobile($p_col: 6, $p_gutter: 0){
+  .news-tpl-grid {
+    .news-tpl-item{
+      @include grid-col($col: $p_col, $grid-columns: 12, $gutter: $p_gutter);  
+    }
+  }
+}
+/*========= FOOTER ===============*/
+@mixin setFooterMobile(){
+  #footer {
+    .ft-flex {
+      @include flex-wrap(wrap);
+      .ft-info,.ft-dknt {
+        width: 100%;
+        margin-bottom: 1em;
+      }
+      .ft-fanpage,.ft-baiviet  {
+        width: 48%;
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
+@mixin setCopyrightCenter(){
+  .copyright {
+    padding-bottom: 50px;
+      .ft-wrap {
+        @include flex-wrap(wrap);
+        text-align: center;
+          .text {
+            width: 100%;
+          }
+
+          ul.ft-thongke {
+            width: 100%;
+            @include flex-wrap(wrap);
+            @include justify-content(center);
+          }
+      }
+  }
+}

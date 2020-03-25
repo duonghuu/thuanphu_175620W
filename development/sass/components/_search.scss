@@ -1,0 +1,68 @@
+.openBtn {
+    border: none;
+    cursor: pointer;
+    z-index: 400;
+    position: relative;
+    outline: none !important;
+    background-color: transparent;
+    @include transition(width .6s, border-radius .6s, background .6s, box-shadow .6s);
+    @include setFont(17px, #fff, 700);
+    @include box(40px, 40px);
+    @include grid($display: inline-flex, $align-items: center, $justify-content: center);
+    &::before{
+        //content: "";
+        // background-color: #dcdcdc;
+        // @include box(1px, 24px);
+        // @include absolute($left: -1em);
+    }
+    &:hover {
+    }
+
+}
+
+#search {
+    
+    width: 100%;
+    max-width: 447px;
+    z-index: 50;
+    display: block;
+    &.hien {
+        display: block;
+    }
+
+    .my-search {
+        @include grid($display: flex, $align-items: center, $justify-content: space-between);
+        overflow: hidden;
+        background-color: #fff; 
+        border: 2px solid #0c0cdc;
+        border-radius: 5px;
+        .keyword {
+            @include flex(1);
+            @include setFont(0.9em, #000);
+            padding: 0px 10px;
+            border: 0;
+            height: 39px;
+            box-shadow: none;
+            background-color: transparent;
+        }
+
+        .btn_search {
+            @include grid($display: flex, $align-items: center, $justify-content: center);
+            @include box(48px, 39px);
+            @include setFont(18px, #fff, 700);
+            background-color: #0c0cdc;
+            cursor: pointer;
+        }
+
+        &:hover {
+            input {
+            }
+
+        }
+
+        input:focus {
+        }
+
+    }
+
+}

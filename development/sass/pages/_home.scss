@@ -1,0 +1,126 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+%idx-tit {}
+.abc{
+    @include boxstyle($display: flex);
+}
+.def{
+    @include boxstyle($display: inline-flex);
+    font-size: 20px;
+} 
+%idx-tit-line {
+    content: "";
+    background: url($images-url + "idx-l.png");
+    @include box(134px, 7px);
+    @include relative($bottom: -5px);
+}
+
+.idx-tit {
+    background-color: $bg-menu;
+    @include grid($display: flex, $justify-content: space-between, $align-items: flex-end);
+    margin-bottom: 1em;
+    min-height: 49px;
+    h4 {
+        @include setFont(25px, #0c0cdc, 700);
+        @include grid($display: inline-flex, $align-items: center);
+        min-height: 48px;
+        padding-right: 100px;
+        text-transform: uppercase;
+        background-color: #f3f3f3;
+        margin: 0;
+        position: relative;
+
+        img{
+            margin-right: 7px;
+        }
+        span, a {
+            color: #0c0cdc;
+        }
+
+        &::before {
+        }
+
+        &::after {
+            @include box(80px, 48px);
+            @include absolute($right: 0);
+            @include bg("idx-tit2.png");
+            content: "";
+            z-index: 152;
+        }
+    }
+    a.xemthem{
+        @include setFont(14px, #000, 700);
+        @include grid($display: inline-flex, $align-items: center);
+        min-height: 49px;
+        background-color: #ffc600;
+        -webkit-border-top-left-radius: 40px;
+        -webkit-border-bottom-left-radius: 40px;
+        -moz-border-radius-topleft: 40px;
+        -moz-border-radius-bottomleft: 40px;
+        border-top-left-radius: 40px;
+        border-bottom-left-radius: 40px;
+        padding: 0 1em 0 2em;
+        i{
+            margin-right: 7px;
+        }
+    }
+}
+
+.idx-desc {
+    @include setFont(15px, #808080, 400, $font-text);
+}
+
+.spnoibat-bg{
+    padding-top: 2em;
+    &+.spnoibat-bg{
+      padding-bottom: 2em;
+    }
+}
+
+.spnoibat-flex{
+    @include grid($display: flex, $justify-content: space-between);
+  .feature-img{
+    width: percentage(347 / 1209);
+    margin-right: 15px;
+    @at-root .odd#{&}{
+      order: 1;
+       margin-right: 0;
+        margin-left: 15px;
+    }
+    img{
+      
+    }
+  }
+  .product-grid{
+    @include flex(1);
+    .pr-box{
+        @include grid-col($col: 4, $grid-columns: 12, $gutter: 2%);
+    }
+  }
+}
+
+.qc-main{
+    margin: 0 -#{em(6)};
+    .qc-item{
+        padding: 0 em(6);
+        a{
+            display: block;
+            img{
+
+            }
+        }
+    }
+}
+.price-wrap{
+    @include grid($display: flex, $justify-content: center);
+    .dathang{
+        @include box(47px, 29px, 5px);
+        @include grid($display: inline-flex, $align-items: center, $justify-content: center);
+        margin-top: 7px;
+        border: 1px solid #0000ff;
+        i{
+            color: #0000ff;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+%img-fill {
+  @include absolute(0,0,0,0);
+  @include box(100%, 100%);
+  object-fit: fill;
+}
+%boxstyle_flex{
+  display: flex;
+}
+%boxstyle_inline-flex{
+  display: inline-flex;
+}
+%boxstyle_justify-content-space-between{
+  justify-content: space-between;
+}
+%boxstyle_justify-content-center{
+  justify-content: center;
+}
+%boxstyle_align-items-space-between{
+  align-items: space-between;
+}
+%boxstyle_align-items-center{
+  align-items: center;
+}
+%boxstyle_flex-wrap-wrap{
+  flex-wrap: wrap;
+}
+%boxstyle_flex-wrap-nowrap{
+  flex-wrap: nowrap;
+}
+/* ======================== MENU ======================== */
+%hover_menu_color{
+        //background: url($images-url+"hover-menu.png") repeat-x;
+        color: $color-menu-hover;
+        //background-color: $bg-menu-item-hover;
+      }
+/* ======================== SLIDER ======================== */
+%slider-item-1 {
+  display: block;
+  position: relative;
+}
+%slide-text-color{
+  color: #fff;
+}
+/* ======================== FOOTER ======================== */
+%map-style {
+    overflow: hidden;
+    width: 100%;
+    height: $height-map;
+}
+%copyright-font {
+    @include setFont(13px, #fff, $font-text);
+}
