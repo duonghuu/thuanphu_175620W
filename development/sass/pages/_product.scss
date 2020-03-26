@@ -16,38 +16,32 @@
 }
 /*san pham*/
 .slick-box-item {
-    padding: 0 1em;
+    padding: 0 em(13);
 }
 .pr-box{
-    @include grid-col($col: 4, $grid-columns: 12, $gutter: 2%);
+    @include grid-col($col: 3, $grid-columns: 12, $gutter: 2%);
     position:relative;
     @include transition(all .2s linear);
 
     @at-root .slick-box-item #{&}{
         // float: none;
-        // margin: 0;
-        // width: 100%;
+        margin: 0;
+        width: 100%;
     }
 
     article{
         position:relative;
         margin: 0 auto;
-        padding: 12px;
+        padding: 3px;
         background: #fff;
-        border: 1px solid #e6e6e6;
+        border: 2px solid #ebebeb;
+        text-align: center;
         .imgsp{
             display: block;
             overflow: hidden;
             position: relative;
-            padding-top: percentage(300/400);
+            padding-top: percentage(200/269);
             margin-bottom: 7px;
-            .giam{
-                @include box(34px, 34px, 100%);
-                @include grid($display: inline-flex, $justify-content: center, $align-items: center);
-                @include setFont(12px, #fff, 700);
-                @include absolute($top: 35px, $right: 15px);
-                background-color: #f00;
-            }
             img{
                 @extend %img-fill;
             }
@@ -56,11 +50,10 @@
         .info{
             z-index:6;
             position:relative;
-
             h3{
-                @include setFont(14px, #333, 300);
-                @include setTagAHover(#333, #f00);
-                margin-bottom: 2px ;
+                @include setFont(15px, #2f2f2f, 500);
+                @include setTagAHover(#2f2f2f, #d80000);
+                margin-bottom: 2px;
 
                 a{
                     @include transition(all .2s ease);
@@ -69,24 +62,28 @@
             }
 
             p{
-                @include grid($display: flex, $flex-wrap: wrap, $align-items: flex-end);
-                @include setFont(14px, #333, 300);
+                @include boxstyle($display: flex, $flex-wrap: wrap, $align-items: flex-end, $justify-content: center);
+                @include setFont(17px, #d80000, 700, "Arial");
                 position: relative;
-                margin: 0;
+                margin: 10px 0;
                 
                 del{
-                    color: #333;
+                    
                     display: inline-block;
+                    margin: 0 0 1px 3px;
+                    line-height: 1;
+                    @include setFont(13px, #b1abab, 400, "Arial");
                 }
 
                 strong{
-                    @include grid($display: inline-flex, $flex-wrap: wrap);
+                    @include boxstyle($display: inline-flex, $flex-wrap: wrap);
                     font-weight: 400;
                 }
 
                 span{
-                    @include setFont(24px, #333, 400);
                     display: inline-block;
+                    line-height: 1;
+                    margin: 0 5px;
                 }
             }
         }
@@ -94,11 +91,12 @@
 }
 
 /*end san pham*/
-div.wap_pro{    /* margin:30px 0; */
-display:flex;justify-content:space-between;}
+div.wap_pro{   
+    @include boxstyle($display: flex, $justify-content: space-between);
+}
 .zoom_slick{
-    width:42%;
-    text-align:center;
+    width: 42%;
+    text-align: center;
 }
 .pr__detail--verticle .product_info{width:47%;}
 .pr__detail--verticle .zoom_slick{width:50%;}

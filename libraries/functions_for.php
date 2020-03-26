@@ -141,7 +141,7 @@ function for1($table,$com,$type,$duoi='.html'){
 	global $d,$lang,$str,$link_id;
 	$baiviet = get_result("select id,ten$lang as ten,tenkhongdau,type from #_$table where hienthi=1 and type='$type' order by stt,id desc");
 	$str='';
-	$str.='<ul>';
+	$str.='<ul class="sub-menu">';
 	for($i=0;$i<count($baiviet);$i++){
 		if($link_id){
 		$str.='<li><a href="'.$com.'/'.$baiviet[$i]["tenkhongdau"].'-'.$baiviet[$i]["id"].$duoi.'">'.$baiviet[$i]["ten"].'</a>';	
@@ -157,7 +157,7 @@ function for2cap($table1,$table2,$com,$type,$duoi1='',$duoi2='/'){
 	global $d,$lang,$str,$link_id;
 	$danhmuc_cap1 = get_result("select id,ten$lang as ten,tenkhongdau,type from #_$table1 where hienthi=1 and type='$type' order by stt,id desc");
 	$str='';
-	$str.='<ul>';
+	$str.='<ul class="sub-menu">';
 	for($i=0;$i<count($danhmuc_cap1);$i++){
 		if($link_id){
 			$link1 = $com.'/'.$danhmuc_cap1[$i]["tenkhongdau"].'-'.$danhmuc_cap1[$i]["id"];
@@ -190,7 +190,7 @@ function for3cap($table1,$table2,$table3,$com,$type,$duoi1='',$duoi2='/',$duoi3=
 	$d->query($sql);
 	$danhmuc_cap1 = $d->result_array();
 	$str='';
-	$str.='<ul>';
+	$str.='<ul class="sub-menu">';
 	for($i=0;$i<count($danhmuc_cap1);$i++){
 		if($link_id){
 			$link1 = $com.'/'.$danhmuc_cap1[$i]["tenkhongdau"].'-'.$danhmuc_cap1[$i]["id"];
@@ -296,17 +296,16 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 	function showProduct($v,$options=array(),$k=null){
 		global $lang,$company,$com;
 		$link = get_url($v,'san-pham');
-		$giaspgiam = ($v["giakm"]>0)?'<span class="giam">-'.tinh_phantram($v["gia"],$v["giakm"]).
-		'%</span>':"";
+		// $giaspgiam = ($v["giakm"]>0)?'<span class="giam">-'.tinh_phantram($v["gia"],$v["giakm"]).
+		// '%</span>':"";
 		// $cls_moi = ($v["spmoi"]>0)?'<i class="new">new</i>':"";
 		// $cls_banchay = ($v["spbanchay"]>0)?'<i class="sale"></i>':"";
 		$giasp = ($v["giakm"]>0)?$v["giakm"]:$v["gia"];
-		$gia = ($giasp>0)?num_format($giasp).' vnđ':_lienhe;
+		$gia = ($giasp>0)?num_format($giasp).'đ':_lienhe;
 		$s_gia = "";
 		if($v["giakm"]>0) {
-			
-			$s_gia .= '<span>'.num_format($v["giakm"]).' vnđ</span>';
-			$s_gia .= '<del>'.num_format($v["gia"]).' vnđ</del>';
+			$s_gia .= '<span>'.num_format($v["giakm"]).'đ</span>';
+			$s_gia .= '<del>'.num_format($v["gia"]).'đ</del>';
 		}else{
 			$s_gia .= '<span>'.$gia.'</span>';
 		}
@@ -339,18 +338,15 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 		// $linkct= '<a href="'.$link.'" class="chitietnt" >Xem chi tiết</a>';
 		// $linkct .= '<a href="#" data-id="'.$v["id"].'" class="dathang">
 		// <i class="fas fa-shopping-cart"></i> Đặt hàng</a>';
-		$linkct = '<a href="#" data-id="'.$v["id"].'" class="dathang">
-		<i class="fas fa-shopping-cart"></i></a>';
+		// $linkct = '<a href="#" data-id="'.$v["id"].'" class="dathang">
+		// <i class="fas fa-shopping-cart"></i></a>';
 		echo $slickdiv.'<div class="pr-box name '.$wowclass.'" >
 		<article>
 				<a href="'.$link.'" class="imgsp zoom_hinh">'.$imgurl.$cls_moi.$cls_banchay.
 				$giaspgiam.'</a> 
 			<div class="info">
 			<h3><a href="'.$link.'">'.$v["ten"].'</a></h3>
-			<div class="price-wrap">
-				<p>'.$s_gia.'</p>
-				'.$linkct.'
-			</div>
+			<p>'.$s_gia.'</p>
 			</div>
 		</article></div>'.$slickenddiv;
 	}

@@ -33,6 +33,8 @@
             echo ' activemenu' ?>" id="menu_tt"><a href="" title="" class="exp"><span>
             Bài viết</span><strong></strong></a>
             <ul class="sub">
+                <?php phanquyen_menu('Tin tức','news','man','tin-tuc'); ?>
+                <?php phanquyen_menu('Chính sách','news','man','chinh-sach'); ?>
                 <?php phanquyen_menu('Tổng hợp khuyến mãi','news','man','khuyen-mai'); ?>
                 <?php phanquyen_menu('Về chúng tôi','news','man','ve-chung-toi'); ?>
                 <?php phanquyen_menu('Hỗ trợ khách hàng','news','man','ho-tro'); ?>
@@ -56,7 +58,7 @@
         || $_GET['com']=='yahoo') echo ' activemenu' ?>" id="menu_nt"><a href="" title="" 
         class="exp"><span>Marketing Online</span><strong></strong></a>
         <ul class="sub">
-          <?php //phanquyen_menu('Mạng xã hội','lkweb','man','mxh'); ?>
+          <?php phanquyen_menu('Mạng xã hội','lkweb','man','mxh'); ?>
           <?php //phanquyen_menu('Mạng xã hội footer','lkweb','man','mxhft'); ?>
           <?php //phanquyen_menu('Hình thanh toán','lkweb','man','mxhle'); ?>
           <?php //phanquyen_menu('Quản lý liên kết web','lkweb','man','lkweb'); ?>
@@ -71,7 +73,7 @@
   <ul class="sub">
     <?php //phanquyen_menu('Cập nhật background','anhnen','capnhat','background'); ?>
     <?php phanquyen_menu('Logo','background','capnhat','logo'); ?>
-    <?php //phanquyen_menu('Banner','background','capnhat','banner'); ?>
+    <?php phanquyen_menu('Banner','background','capnhat','banner'); ?>
     <?php //phanquyen_menu('Background banner','background','capnhat','bgbn'); ?>
     <?php //phanquyen_menu('Cập nhật logo đóng dấu','background','capnhat','dong'); ?>
     <?php //phanquyen_menu('Background liên hệ','background','capnhat','bgft'); ?>
@@ -79,7 +81,7 @@
     <?php phanquyen_menu('Quản lý slider','slider','man_photo','slider'); ?>
     <?php //phanquyen_menu('Banner trang trong','news','man','bntrong'); ?>
     <?php //phanquyen_menu('Text Đối tác','about','capnhat','txtdoitac'); ?>
-    <?php //phanquyen_menu('Thương hiệu','slider','man_photo','doi-tac'); ?>
+    <?php phanquyen_menu('Đối tác','slider','man_photo','doi-tac'); ?>
     <?php phanquyen_menu('Banner quảng cáo','slider','man_photo','quang-cao'); ?>
     <?php //phanquyen_menu('Banner quảng cáo dưới album','slider','man_photo','quang-cao2'); ?>
     <?php //phanquyen_menu('Quản lý quảng cáo 2 bên','slider','man_photo','letruot'); ?>
@@ -122,7 +124,7 @@ $_GET['com']=='user') echo ' activemenu' ?>" id="menu_cp"><a href="" title="" cl
         <?php phanquyen_menu('Cấu hình thông tin Website','company','capnhat',''); ?>
         <?php //phanquyen_menu('Quản lý hotline','news','man','hotline'); ?>
         <?php //phanquyen_menu('Quản lý chi nhánh','news','man','diachi'); ?>
-        <?php //phanquyen_menu('Quản lý video','video','man','video'); ?>
+        <?php phanquyen_menu('Quản lý video','video','man','video'); ?>
         <?php // phanquyen_menu('Tags','news','man','tags'); ?>
         <li <?php if($_GET['act']=='admin_edit') echo ' class="this"' ?> >
             <a href="index.php?com=user&act=admin_edit">Quản lý Tài Khoản</a></li>

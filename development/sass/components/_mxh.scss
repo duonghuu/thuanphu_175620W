@@ -20,23 +20,19 @@ div.mxhft{
     }
 }
 %mxh-style{
-    @include inline-flex;
-    @include align-items(center);
-    @include justify-content(flex-end);
+    @include boxstyle($display: flex, $justify-content: flex-end, $align-items: center);
     position: relative;
-    margin-bottom:10px;
     a{
-        @include inline-flex;
-        @include justify-content(center);
-        @include align-items(center);
-        
-        margin-left: 9px;
+        @include boxstyle($display: inline-flex, $justify-content: center, $align-items: center);  
 
+        &+a{
+            margin-left: 5px;
+        }
         img{
-            max-height: 25px;
+            max-height: 36px;
             object-fit: scale-down;
+            @include transition(all 1s ease);  
             &:hover{
-                transition: 1s;
                 transform: rotate(360deg);
             }
         }

@@ -197,7 +197,6 @@ div.map iframe {
 body {
     @include font-size(16, 16);
     font-family: $font-text;
-    background-color: $theme-color;
     &.clsindex{
     }
     
@@ -703,22 +702,25 @@ div.wap_item {
 }
 
 .doitac-bg {
-    background: #f2f2f2;
-    padding: 25px 0;
-
+    background: #f1f1f1;
+    padding: 30px 0;
     .doitac-main {
-        width: calc(100% - 50px);
-        padding: 2px 0;
-
+        width: calc(100% - 70px);
+        margin: 0 auto;
+        .slick-prev{
+            left: -30px;
+        }
+        .slick-next{
+            right: -30px;
+        }
         .doitac-item {
+            padding: em(5);
             a, span {
+                @include transition(all 0.2s ease);
+                padding-top: percentage(94/152);
                 display: block;
-                margin: 0 auto;
-                transition: .2s;
                 position: relative;
                 overflow: hidden;
-                max-width: 130px;
-
                 img {
                     object-fit: scale-down;
                 }
@@ -776,29 +778,34 @@ div.wap_item {
     grid-column-gap: 20px;
 }
 
-
+%slider-item-1 {
+  display: block;
+  position: relative;
+}
+%slide-text-color{
+  color: #fff;
+}
 .slider-bg{
-
+    margin-bottom: 45px;
+}
+.slider-flex{
+    @include boxstyle($display: flex, $justify-content: space-between);
 }
 #slideshow {
     position:relative;
     overflow:hidden;
-    z-index:5;
-    margin-left: 270px;
+    @include flex(1);
     .slideshow-slider-main{
         @include clearfix;
         .slideshow-slider-item {
             & > section {
                 @extend %slider-item-1;
-
                 .slider-link{
                     display: block;
                 }
-
                 img {
                     width: 100%;
                 }
-                
                 // .slider-text-bg{
                 //     @include flexbox;
                 //     @include align-items(center);

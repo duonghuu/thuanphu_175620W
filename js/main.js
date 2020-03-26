@@ -6016,7 +6016,7 @@ function isCharacterlimit(str,text,intmin,intmax){
 }
 
 
-$('.qc-main').on({
+$('.doitac-main').on({
       beforeChange: function(event, slick, currentSlide, nextSlide) {
           myLazyLoad.update();
       }
@@ -6024,9 +6024,9 @@ $('.qc-main').on({
       lazyLoad: 'ondemand',
       infinite: true,
       accessibility: false,
-      slidesToShow: 2,
+      slidesToShow: 7,
       slidesToScroll: 1,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 3000,
       speed: 1000,
       arrows: true,
@@ -6034,12 +6034,111 @@ $('.qc-main').on({
       dots: false,
       draggable: true,
       responsive: [{
+          breakpoint: 930,
+          settings: {
+              slidesToShow: 5
+          }
+      },{
+          breakpoint: 750,
+          settings: {
+              slidesToShow: 4
+          }
+      },{
           breakpoint: 430,
           settings: {
-              slidesToShow: 1
+              slidesToShow: 2
           }
       }]
   });
+  $('.video-khac-main').on({
+        beforeChange: function(event, slick, currentSlide, nextSlide) {
+            myLazyLoad.update();
+        }
+    }).slick({
+        lazyLoad: 'ondemand',
+        infinite: true,
+        accessibility: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 3000,
+        speed: 1000,
+        arrows: true,
+        centerMode: false,
+        dots: false,
+        draggable: true,
+        responsive: [{
+            breakpoint: 430,
+            settings: {
+                slidesToShow: 2
+            }
+        }]
+    });
+  $('.tinnb-main').on({
+        beforeChange: function(event, slick, currentSlide, nextSlide) {
+            myLazyLoad.update();
+        }
+    }).slick({
+        lazyLoad: 'ondemand',
+        infinite: true,
+        accessibility: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 3000,
+        speed: 1000,
+        vertical: true,
+        arrows: true,
+        centerMode: false,
+        dots: false,
+        draggable: true,
+        responsive: [{
+            breakpoint: 430,
+            settings: {
+                slidesToShow: 1,
+                vertical: false,
+            }
+        }]
+    });
+  $('.spnoibat-main').on({
+        beforeChange: function(event, slick, currentSlide, nextSlide) {
+            myLazyLoad.update();
+        }
+    }).slick({
+        lazyLoad: 'ondemand',
+        infinite: true,
+        accessibility: false,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 3000,
+        speed: 1000,
+        arrows: true,
+        centerMode: false,
+        dots: false,
+        draggable: true,
+        responsive: [{
+            breakpoint: 930,
+            settings: {
+                slidesToShow: 3
+            }
+        },{
+            breakpoint: 750,
+            settings: {
+                slidesToShow: 4
+            }
+        },{
+            breakpoint: 430,
+            settings: {
+                slidesToShow: 2
+            }
+        },{
+            breakpoint: 330,
+            settings: {
+                slidesToShow: 1
+            }
+        }]
+    });
 
 if(js_deviceType == "computer"){
   new WOW().init();
@@ -6098,9 +6197,9 @@ $(document).ready(function() {
 
   $('.slideshow-slider-main').slick({lazyLoad: 'ondemand', infinite: true, accessibility:false, slidesToShow: 1, slidesToScroll: 1, autoplay:false, autoplaySpeed:3000, speed:1000, arrows:true, centerMode:false, dots:false, draggable:true, });
     $('.web-slider-main').slick({lazyLoad: 'ondemand', infinite: true, accessibility:false, slidesToShow: 1, slidesToScroll: 1, autoplay:false, autoplaySpeed:3000, speed:1000, arrows:true, centerMode:false, dots:false, draggable:true, });
-    // $(".video-khac a").click(function(a) {
-    //  $("#iframe").attr("src", "https://www.youtube.com/embed/" + $(this).data("val") + "?autoplay=1"), a.preventDefault()
-    // });
+    $(".video-khac a").click(function(a) {
+     $("#iframe").attr("src", "https://www.youtube.com/embed/" + $(this).data("val") + "?autoplay=1"), a.preventDefault()
+    });
     // $('#lstvideo').change(function(){
     //  $("#iframe").attr("src","https://www.youtube.com/embed/"+$(this).val()+"?autoplay=1");
     // }); 
@@ -6118,10 +6217,10 @@ $(document).ready(function() {
       js.src = "//connect.facebook.net/"+js_langfb+"/sdk.js#xfbml=1&version=v2.8";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-    // $(".codebando").html(js_bando);
-    // if(js_linkvideo){ 
-    //   $("#video-idx").html('<iframe id="iframe" src="https://www.youtube.com/embed/'+js_linkvideo+'" frameborder="0" allowfullscreen></iframe>');
-    // }
+    $(".codebando").html(js_bando);
+    if(js_linkvideo){ 
+      $("#video-idx").html('<iframe id="iframe" src="https://www.youtube.com/embed/'+js_linkvideo+'" frameborder="0" allowfullscreen></iframe>');
+    }
   }else{
     var fired = false;
     window.addEventListener("scroll", function(){
@@ -6133,31 +6232,31 @@ $(document).ready(function() {
           js.src = "//connect.facebook.net/"+js_langfb+"/sdk.js#xfbml=1&version=v2.8";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-        // $(".codebando").html(js_bando);
-        // if(js_linkvideo){ 
-        //   $("#video-idx").html('<iframe id="iframe" src="https://www.youtube.com/embed/'+js_linkvideo+'" frameborder="0" allowfullscreen></iframe>');
-        // }
+        $(".codebando").html(js_bando);
+        if(js_linkvideo){ 
+          $("#video-idx").html('<iframe id="iframe" src="https://www.youtube.com/embed/'+js_linkvideo+'" frameborder="0" allowfullscreen></iframe>');
+        }
         fired = true;
       }
     }, true);
   };
   if(js_deviceType == "computer"){
-    $('.hoverhori').hover(function() {
-        var vitri = $(this).position().top;
-        $('.hoverhori> ul').css({
-          'top': vitri + 'px'
-        })
-      });
+    // $('.hoverhori').hover(function() {
+    //     var vitri = $(this).position().top;
+    //     $('.hoverhori> ul').css({
+    //       'top': vitri + 'px'
+    //     })
+    //   });
     $(window).scroll(function(){
-      var cach_top = $(window).scrollTop();
-      var heaigt_header = $('.hd-bg').height();
-      if(cach_top >= heaigt_header){
-        $('.nav-bg').css({position: 'fixed', top: '0px', zIndex:99999});
-        $('.nav-bg').addClass('fixed');
-      }else{
-        $('.nav-bg').css({position: 'relative', top: 'auto'});
-        $('.nav-bg').removeClass('fixed');
-      }
+      // var cach_top = $(window).scrollTop();
+      // var heaigt_header = $('.hd-bg').height();
+      // if(cach_top >= heaigt_header){
+      //   $('.nav-bg').css({position: 'fixed', top: '0px', zIndex:99999});
+      //   $('.nav-bg').addClass('fixed');
+      // }else{
+      //   $('.nav-bg').css({position: 'relative', top: 'auto'});
+      //   $('.nav-bg').removeClass('fixed');
+      // }
     });
   }
   

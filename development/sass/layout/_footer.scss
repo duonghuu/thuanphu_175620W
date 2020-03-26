@@ -1,39 +1,24 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
-/*footer*/
+%map-style {
+    overflow: hidden;
+    width: 100%;
+    height: $height-map;
+}
+%copyright-font {
+    @include setFont(13px, #fff, $font-text);
+}
 
 
 #footer {
     position: relative;
     width: 100%;
     z-index: 5;
-    margin-top: 20px;
-    background-color: $bg-footer ;
-    border-top: 1px solid #e0e0e0;
-    &::before{
-        // content: "";
-        // height: 7px;
-        // width: 100%;
-        // position: absolute;
-        // left: 0;
-        // top: 0;
-        // background: url($images-url+"menu-bg.jpg") repeat-x;
-    }
-
-    &::after{
-        // content: "";
-        // height: 5px;
-        // width: 100%;
-        // position: absolute;
-        // left: 0;
-        // bottom: 0;
-        // background: url($images-url+"menu-bg.jpg") repeat-x left bottom;
-    }
-
+    @include bg("ft-bg.jpg",$background-size: cover);
     .ft-flex {
         @include boxstyle($display: flex, $justify-content: space-between);
-        padding: 30px 0;
+        padding: 38px 0;
         .ft-logo { 
             a{
                 img{
@@ -43,50 +28,41 @@
         }
         .ft-info {
             position: relative;
-            width: percentage(400/1210);
-
-            .content {
-                
-            }
+            width: percentage(500/1200);
         }
 
         .ft-bando {
-            width: 28.4%;
-
-            
         }
 
         .ft-fanpage {
-            width: 37.2%;
-
+            width: percentage(300/1200);
             .fanpageplace {
-                height: 250px;
+                height: 205px;
                 overflow: hidden;
             }
         }
 
         .ft-dknt{
-            width: percentage(320/1210);
         }
 
         .ft-baiviet {
-            width: percentage(220/1210);
-
+            width: percentage(320/1200);
             ul {
                 list-style-type: none;
 
                 li {
-                    
-                    @include setTagAHover(#333, #ff0);
+                    margin-bottom: 10px;
+                    @include setTagAHover(#fff, #ff0);
                     a {
-                        font-size: 14px;
+                        font-size: 15px;
                         position: relative;
-                        display: block;
-                        padding: 8px 0;
+                        
+                        @include boxstyle($display: flex, $align-items: flex-start);
                         &::before {
-                            // content: "\f0da";
-                            // margin-right: 7px;
-                            // @include setFont(14px, #808080, 700, $font-awesome);
+                            content: "\f009";
+                            margin: 7px 7px 0 0;
+                            @include setFont(7px, #fff, 700, $font-awesome);
+                            
                         }
                     }
                     &+li{
@@ -98,26 +74,18 @@
 
     .ft-company {
         text-transform: uppercase;
-        @include setFont(18px, #f00, 700);
+        @include setFont(em(30), #fff, 400, $font-UTMImpact);
         a {
-            color: #f00;
+            color: #fff;
         }
     }
 
     .ft-tit {
-        text-transform: uppercase;
         position: relative;
-        margin-bottom: 10px;
+        margin-bottom: 25px;
 
-        strong {
-            position: relative;
-            @include setFont(16px, #fff, 700);
-        }
-
-        span {
-            @include boxstyle($display: inline-flex, $align-items: center);
-            @include setFont(14px, #000, 700);
-            position: relative;
+        strong, span {
+            @include setFont(15px, #fff, 700);
             &::after {
                 // content: "";
                 // @include box(40px, 3px);

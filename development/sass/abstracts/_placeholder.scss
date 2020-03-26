@@ -15,11 +15,23 @@
 %boxstyle_justify-content-center{
   justify-content: center;
 }
+%boxstyle_justify-content-flex-end{
+  justify-content: flex-end;
+}
 %boxstyle_align-items-space-between{
   align-items: space-between;
 }
 %boxstyle_align-items-center{
   align-items: center;
+}
+%boxstyle_align-items-flex-end{
+  align-items: flex-end;
+}
+%boxstyle_align-items-flex-start{
+  align-items: flex-start;
+}
+%boxstyle_flex-direction-column{
+  flex-direction: column;
 }
 %boxstyle_flex-wrap-wrap{
   flex-wrap: wrap;
@@ -27,26 +39,9 @@
 %boxstyle_flex-wrap-nowrap{
   flex-wrap: nowrap;
 }
-/* ======================== MENU ======================== */
-%hover_menu_color{
-        //background: url($images-url+"hover-menu.png") repeat-x;
-        color: $color-menu-hover;
-        //background-color: $bg-menu-item-hover;
-      }
-/* ======================== SLIDER ======================== */
-%slider-item-1 {
-  display: block;
-  position: relative;
-}
-%slide-text-color{
-  color: #fff;
-}
-/* ======================== FOOTER ======================== */
-%map-style {
-    overflow: hidden;
-    width: 100%;
-    height: $height-map;
-}
-%copyright-font {
-    @include setFont(13px, #fff, $font-text);
-}
+
+
+
+
+
+

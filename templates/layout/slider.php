@@ -5,6 +5,8 @@
          ?>
          <div class="slider-bg">
            <div class="container">
+           <div class="slider-flex">
+            <?php include _template."layout/menu_left.php";?>
              <div id="slideshow">
                <div class="slideshow-slider-main">
                  <?php 
@@ -23,6 +25,7 @@
                   <?php } ?>
                 </div>
               </div>
+            </div>
             </div>
           </div>
           <?php }else{ 

@@ -4,11 +4,12 @@
 
 /// Container's maximum width
 /// @type Length
-$max-width: 1240px !default;
+$max-width: 1230px !default;
 $browser-context: 16;
 /* ======================== FONTS ======================== */
 $font-SFUSchadowBTBlackCondensed               : 'SFUSchadowBTBlackCondensed';
 $font-UTMHelvetIns               : 'UTMHelvetIns';
+$font-UTMImpact               : 'UTMImpact';
 $font-roboto-mono               : 'Roboto Mono', monospace;
 $font-open-sans                 : 'Open Sans', sans-serif;
 $font-roboto-condensed          : 'Roboto Condensed', sans-serif;
@@ -28,14 +29,14 @@ $bg-header              : #f3f3f3;
 /* ======================== MENU ======================== */
 $font-menu              : $font-roboto;
 $color-menu-hover       : #ff0;
-$bg-menu                : #0c0cdc;
+$bg-menu                : #0d62d2;
 $bg-menu-item           : transparent;
 $bg-menu-item-hover     : transparent;
 /* ======================== FOOTER ======================== */
 $bg-copyright       : #0c0cdc;
 $bg-footer          : #f3f3f3;
-$theme-color        : #f3f3f3;
-$height-map         : 230px;
+$theme-color        : #207a00;
+$height-map         : 485px;
 /* ======================== URL ======================== */
 $font-url           : 'css/fonts/';
 $font-awesome-url   : 'css/fontawesome/webfonts/';

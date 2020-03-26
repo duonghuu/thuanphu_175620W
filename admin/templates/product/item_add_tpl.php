@@ -196,67 +196,6 @@ $ds_photo=$d->result_array();
        <div class="clear"></div>
      </div>
    <?php } ?>
-           <?php if($_GET['id_danhmuc']!=''){?>
-           <?php /* <link href="css/fSelect.css" rel="stylesheet">
-                      <script src="js/fSelect.js" type="text/javascript"></script> */?>
-              
-        <div class="formRow">
-        <label>Chọn thuộc tính lọc</label>
-        <div class="formRight">     
-                <?php
-          $d->reset();
-          $sql="select loc1,loc2 from table_product_danhmuc where type='san-pham' and id=".$_GET['id_danhmuc']." order by stt, id asc";
-          $d->query($sql);
-          $danhmuc = $d->fetch_array();
-          
-          if($danhmuc['loc1']!=''){
-          
-          $arr_id_danhmuc = explode(',', $item['thuoctinh_danhmuc']);
-          $d->reset();
-          $sql="select id,ten from table_news_danhmuc where type='loc-san-pham' and id in (".$danhmuc['loc1'].") order by stt, id asc";
-          $d->query($sql);
-          $arr_danhmuc = $d->result_array();
-          
-          if(!empty($arr_danhmuc)){ ?>
-                  <select id="sel_multi" multiple="multiple" class="main_select" name="thuoctinh_danhmuc[]">
-                    <?php foreach($arr_danhmuc as $danhmuc_dm){ ?>
-                <option value="<?=$danhmuc_dm['id']?>" data-list="true" <?php if(in_array($danhmuc_dm['id'], $arr_id_danhmuc)) { echo 'selected'; } ?>><b><?=$danhmuc_dm['ten']?></b></option>
-                  <?php
-                  if($danhmuc['loc2']!=''){
-                  $arr_id_list = explode(',', $item['thuoctinh_list']);
-                  $d->reset();
-                  $sql="select id,ten from table_news where type='loc-san-pham' and id_danhmuc=$danhmuc_dm[id] and id in (".$danhmuc['loc2'].") order by stt, id desc";
-                  $d->query($sql);
-                  $arr_list = $d->result_array();
-                  if(!empty($arr_list)){
-                    foreach($arr_list as $list_dm){ ?>
-                      <option value="<?=$danhmuc_dm['id']?>_<?=$list_dm['id']?>" data-cat="true" <?php if(in_array($list_dm['id'], $arr_id_list)) { echo 'selected'; } ?>><?=$list_dm['ten']?></option>
-                    <?php
-                    }
-                  }
-                  }
-                  ?>
-                    <?php } ?>
-            </select>
-          <?php } ?>
-                   <?php } ?>
-               
-        </div>
-        <div class="clear"></div>
-      </div>
-       
-        <script type="text/javascript">
-           $().ready(function(){
-             $('#sel_multi').fSelect({
-                 placeholder: 'Chọn mục lọc',
-                 numDisplayed: 3,
-                 searchText: 'Tìm kiếm',
-                 overflowText: '{n} mục đã chọn',
-                 showSearch: true
-             });
-           })
-         </script>
-         <?php }?>
    <?php if(in_array('list',$config['type'])) { ?>
     <div class="formRow">
      <label>Chọn danh mục 2</label>

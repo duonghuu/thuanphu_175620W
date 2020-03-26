@@ -14,7 +14,7 @@
 
         link.type = "text/css";
         link.rel = "stylesheet";
-        link.href = "bootstrap.min.css";
+        link.href = "css/bootstrap.min.css";
 
         document.head.appendChild(link);
     }

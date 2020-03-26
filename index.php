@@ -45,6 +45,7 @@ $_SESSION['dong'] = lay_banner('dong');
             include _template."layout/menu_top.php";
             include _template."layout/valak_menu.php";
             include _template."layout/slider.php";
+            if($source=="index") include _template."layout/doitac.php";
             ?>
             <div class="main_content <?php if($source!="index1") echo 'container';  ?>">
                 <?php if($template == 'product') {  ?>
@@ -63,6 +64,7 @@ $_SESSION['dong'] = lay_banner('dong');
             </div><!---END .main_content-->
         </section>
         <?php 
+        if($source=="index") include _template."layout/bottom.php";
         include _template."layout/footer.php";
         // include _template."layout/valak_menu.php";
         ?>

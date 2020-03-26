@@ -1,9 +1,9 @@
 <div class="nav-bg">
 <div class="container">
   <div class="dmspbox">
-    <p class="tit text-uppercase"><i class="fa fa-bars" aria-hidden="true"></i> <?php echo _danhmucsanpham ?></p>
+    <p class="tit text-uppercase"><i class="fas fa-bars" aria-hidden="true"></i> <?php echo _danhmucsanpham ?></p>
     <div class="dmsp-container " >
-       <ul class="scrollstyle-4" style="overflow-y: scroll">
+       <ul class="scrollstyle-4">
       <?php foreach($product_danhmuc as $kdm => $vdm){
         
         $dmsp1 = get_result("select ten$lang as ten,tenkhongdau,id,type from #_product_list where type='san-pham' and
@@ -24,23 +24,7 @@
   </div>
     <div class="main-nav">
       <ul >
-        <?php //include _template."layout/menu_content.php";?>
-        <li><a href="khuyen-mai.html">
-          <img src="images/khuyenmai.png" alt="khuyến mãi">
-          Tổng hợp khuyến mãi
-        </a></li>
-        <li><a href="mien-phi-dung-thu.html">
-          <img src="images/khuyenmai.png" alt="Dùng thử">
-          Miễn phí dùng thử
-        </a></li>
-        <li><a href="tang-1-nam-bao-hanh.html">
-          <img src="images/khuyenmai.png" alt="bảo hành">
-          Tặng 1 năm bảo hành
-        </a></li>
-        <li><a href="1-doi-1-trong-1-nam.html">
-          <img src="images/khuyenmai.png" alt="đổi hàng">
-          1 đổi 1 trong 1 năm
-        </a></li>
+        <?php include _template."layout/menu_content.php";?>
       </ul>
       <?php /* <button class="openBtn timkiem_icon" ><i class="fas fa-search"></i></button>
             <div id="search">

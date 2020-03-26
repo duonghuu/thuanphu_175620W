@@ -1,8 +1,19 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+%hd-top-style {
+    margin: 0;
+    @include setFont(13px, #000);
+}
+
+%hd-logo-style {
+    content: "";
+    background-color: #fff;
+    @include box(100%, 16px);
+    @include absolute($left: 0);
+}
 .hd-hotline {
-    @include grid($display: inline-flex, $flex-direction: column);
+    @include boxstyle($display: inline-flex, $flex-direction: column);
     float: right;
     position: relative;
 
@@ -30,106 +41,43 @@
     }
 }
 
-%hd-top-style {
-    margin: 0;
-    @include setFont(13px, #000);
-}
-
-%hd-logo-style {
-    content: "";
-    background-color: #fff;
-    @include box(100%, 16px);
-    @include absolute($left: 0);
-}
-
 .hd-bg {
     width: 100%;
     z-index: 450;
     @include relative($left: 0);
-    .hd-top{
-        background-color: $bg-header-top;
-        .hd-top-flex{
-            @include grid($display: flex, $justify-content: space-between);
-            min-height: 40px;
-            .hd-marquee{
-                @include flex(1);
-                @include grid($display: inline-flex, $align-items: center);
-                @extend %hd-top-style;
-            }
-            .hd-top-right{
-                @include flex(1);
-                @include grid($display: inline-flex, $justify-content: flex-end, $align-items: center);
-                p{
-                    @extend %hd-top-style;
-                    i{
-                        margin-right: 7px;
-                    }
-                    &+p{
-                        margin-left: 50px;
-                    }
-                }
-            }
+    @include bg("hd-bg.jpg",$background-size: cover);
+    .hd-flex{
+        @include boxstyle($display: flex, $align-items: center, $justify-content: space-between);
+    }
+}
+.logo{
+    width: percentage(270/1200);
+    img{}
+}
+.banner{
+    width: percentage(660/1200);
+    text-align: center;
+    a{
+        img{
+
         }
     }
-    .hd-bot{
-
-        .hd-bot-flex {
-            @include grid($display: flex, $justify-content: space-between, $align-items: center);
-            min-height: 95px;
-            .logo {
-                display: block;
-                img {
-                    max-height: 95px;
-                }
-            }
-            .hd-bot-right{
-                @include flex(1);
-                @include grid($display: flex, $justify-content: flex-end, $align-items: center);
-                &__item{
-                    @include grid($display: flex, $justify-content: space-between, $align-items: center);
-                    &>a{
-                        color: #0c0cdc;
-                    }
-                    i{
-                        @include box(43px, 43px, 100%);
-                        border: 2px solid #0c0cdc;
-                        margin-right: 5px;
-                        @include grid($display: flex, $justify-content: center, $align-items: center);
-                        &:before{
-                             @include setFont(20px, #0c0cdc, 700);
-                        }
-                       
-                    }
-                    .hd-bot-right__text{
-                        @include flex(1);
-                      p{
-                        @include setFont(13px, #000, 700);
-                        margin: 3px 0;
-                        &.link-hotline{
-                          a{
-                              color:#f00;
-                          }
-                        }
-                      }
-                      &.giohang_fix{
-                          @include setTagAHover(#000, #f00);
-                        a{
-                            //color:#000;
-                        }
-                        strong{
-                            color:#f00;
-
-                          span{
-
-                          }
-                        }
-                      }
-                    }
-                    &+.hd-bot-right__item{
-                        margin-left: 50px;
-                    }
-              }
-            }
+    p{
+        @include setFont(22px, #fff, 400, "Arial");
+        margin-bottom: 0;
+    }
+}
+.hd-right{
+    p{
+        @include setFont(24px, #fff, 400, "Arial");
+        margin: 13px 0 0 0;
+        text-align: right;
+        a{
+            font-weight: 700;
+            color: #ff0;
         }
     }
+}
+.mxh{
+    @extend %mxh-style;
 }

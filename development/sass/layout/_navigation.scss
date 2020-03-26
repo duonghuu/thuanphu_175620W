@@ -1,3 +1,36 @@
+%hover_menu_color{
+    //background: url($images-url+"hover-menu.png") repeat-x;
+    color: $color-menu-hover;
+    //background-color: $bg-menu-item-hover;
+}
+@include keyframes(dropInDown) {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        -moz-transform: translateY(-20px);
+        -o-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+%sub-menu-list{
+    position: absolute;
+    display: none;
+    min-width: 200px;
+    background-color: #fff;
+    list-style-type: none;
+    margin: 0;
+    @include boxShadow(0 3px 5px 0 rgba(0,0,0,.2));
+    @include animation('dropInDown 0.3s both');
+}
 .nav-bg {
     @include flex(1);
     @include relative($left: 0, $right: 0);
@@ -7,168 +40,86 @@
     @at-root .clsindex #{&}{
         
     }
-    .main-nav {
-        margin-left: 270px;
+    
+}
+.main-nav {
+    @include boxstyle($display: flex, $justify-content: space-between,$align-items: center);
+    margin-left: percentage(270/1200);
+    position: relative;
+   
+    ul{
+        list-style-type: none;
+        margin: 0;
+    }
+    &>ul {
+        @include boxstyle($display: flex, $align-items: center,$justify-content: space-between);
+        @include flex(1);
+        z-index: 5;
         
-        @include flexbox;
-        @include justify-content(space-between);
-        @include align-items(center);
-        
-        
-        min-height: 50px;
-        position: relative;
-        @at-root .fixed #{&}{
-            min-height: 50px;
-        }
-        ul {
-            list-style-type: none;
-            margin: 0;
-            li {
-                position: relative;
-                text-align: left;
-                a {
-                    text-decoration: none;
-                    @include setFont(15px, #333, 400, $font-menu);
-
-                }
-                ul {
-                    li {
-                        a {
-                            
-                            
-                            position: relative;
-                            padding: 6px;
-                            @include flexbox;
-                            @include setFont(13px, #333, 400, $font-menu);
-                            border-radius: 17px;
-                            background:#fff;
-                            -moz-box-shadow: 1px 1px 17px 2px rgba(0, 0, 0, 0.3);
-                    -webkit-box-shadow: 1px 1px 17px 2px rgba(0, 0, 0, 0.3);
-                    box-shadow: 1px 1px 17px 2px rgba(0, 0, 0, 0.3);
-                            &::before {
-                                content: "\f105";
-                                margin-right: 5px;
-                                position: relative;
-                                top: 2px;
-                                @include setFont(12px, #333, 700, $font-awesome);
-                            }
-                        }
-                        &:hover {
-                            &>a {
-                                //background: $bg-menu-item-hover;
-                                color: #f00;
-                                &::before {
-                                    color: #f00;
-                                }
-                            }
-                        }
-                        ul {
-                            left: 100% !important;
-                            top: 0 !important;
-                        }
-                        &:not(:last-child) {
-                            //border-bottom: 1px solid rgba(222, 222, 222, 0.31);
-                            margin-bottom:5px;
-                        }
-                    }
-                }
-                &:hover {
-                    &>ul{
-                        opacity: 1;
-                        top: 100%;
-                        visibility: visible;
-                        display: block !important;
-                        background: transparent;
-                    }
-                    & .global-nav-dropdown{
-                        opacity: 1;
-                        visibility: visible;
-                        transition: opacity .1s,visibility 0ms;
-                        transition-delay: .3s;
-                    }
-                    
-                }
-                &:not(.has-menu)>ul {
-                    display: none;
-                    position: absolute;
-                    width: 200px;
-                    /*-moz-box-shadow: 1px 1px 17px 2px rgba(0, 0, 0, 0.3);
-                    -webkit-box-shadow: 1px 1px 17px 2px rgba(0, 0, 0, 0.3);
-                    box-shadow: 1px 1px 17px 2px rgba(0, 0, 0, 0.3);*/
-                    left: 0;
-                    &:empty {
-                        box-shadow: none
-                    }
-                }
-            }
-            
-        }
-        &>ul {
-            @include flexbox;
-            @include align-items(center);
-            @include justify-content(space-between);
-            @include flex(1);
+        &>li {
+            @include flex(auto);
+            position: relative;
             z-index: 5;
-            
-            
-            &>li {
-                @include flex(auto);
+            ul{
+                @extend %sub-menu-list;
+            }
+            &>a {
+                @include boxstyle($display: flex, $align-items: center,$justify-content: center, $flex-wrap: wrap);
+                min-height: 44px;
                 position: relative;
-                z-index: 5;
-               
+                text-align: center;
+                text-transform: uppercase;
+                @include setFont(15px, #fff, 400, $font-menu);
+                
+            }
+            
+            &:hover, &.active {
                 &>a {
-                    @include grid($display: flex, $align-items: center,$justify-content: center, $flex-wrap: wrap);
-                    min-height: 50px;
-                    position: relative;
-                    text-align: center;
-                    @include setFont(14px, #fff, 400, $font-menu);
-                    img{
-                        margin-right: 4px;
-                    }
-                    &::after {
-                            // content: "";
-                            // position: absolute;
-                            // right: 0;
-                            // width: 1px;
-                            // height: 19px;
-                            // background: url($images-url+"menu-line.png");
-                        }
+                    @extend %hover_menu_color;
                 }
-                &:not(:last-child) {
-                    &>a {
-                        &::after {
-                            //content: "";
-                            //position: absolute;
-                            //right: 0;
-                            //width: 1px;
-                            //height: 19px;
-                            //background: url($images-url+"menu-line.png");
-                        }
-                    }
-                    &::after {
-                        /* content: url(images/line.png); */position: absolute;
-                        right: -1px;
-                        height: 19px;
-                    }
-                }
-                &:hover {
-                    &>a {
-                        @extend %hover_menu_color;
-                    }
-                }
-                &.active {
-                    &>a {
-                        @extend %hover_menu_color;
-                    }
+                &>ul{
+                    display: block;
                 }
             }
         }
-        &.nav-left{
+    }
+}
+.main-nav {
+    ul.sub-menu {
+       left: 0;
+       top: 100%;
+       
+        li {
+            position: relative;
+            a {
+                @include setFont(14px, #707070, 400, $font-menu);
+                text-decoration: none;
+                line-height: 34px;
+                padding: 0 10px;
+                white-space: nowrap;
+                display: block;
+                &:after {
+                    content: "\f105";
+                    font:{
+                        weight: 700;
+                        family: $font-awesome;
+                    };
+                    @include absolute($top: 0, $right: 5px);
+                }
+            }
+            @include setTagAHover(#707070, $bg-menu);
+            &:hover{
+                &>ul{
+                    display: block;
+                }
+            }
+            ul {
+                top: 0;
+                left: 100%;
+            }
 
         }
-        &.nav-right{
-            
-        }
+        
     }
 }
 //menu dropdown
@@ -220,69 +171,4 @@
             }
         }
     }
-}
-
-.dmspbox{
-  float: left;
-  width: 270px;
-  position: relative;
-  .tit{
-    margin: 0;
-    background-color: $bg-header-top;
-    cursor: pointer;
-    @include setFont(15px, #000, 700);
-    @include grid($display: flex, $align-items: center);
-    i{
-      @include box(50px,50px);
-      @include grid($display: flex, $justify-content: center, $align-items: center);
-      background-color: #cfa40f;
-      margin-right: 24px;
-    }
-  }
-  .dmsp-container{
-    position: absolute;
-    display: none;
-    width: 100%;
-    border-radius: 0;
-    background: #fff;
-    @include boxShadow(1px 1px 15px -1px rgba(0,0,0,0.4)); 
-    @at-root .clsindex .nav-bg:not(.fixed) #{&}{
-        display: block;
-    }
-    &> ul>li{
-      position: static;
-      padding: 9px 0 9px 25px;
-
-      &:not(:last-child){
-        border-bottom: 1px solid #ded9d9;
-      }
-
-      &>a{
-        display: block;
-        @include setFont(16px, #333);
-      }
-    }
-    li.has-sub {
-        &>ul{
-              width: 100%;
-              background: #fff;
-              display: none;
-              @include absolute($left: 100%, $top: 0);
-              @include boxShadow(1px 1px 15px -1px rgba(0,0,0,0.4)); 
-              a{
-                @include setFont(16px, #333);
-                @include transition(all 0.3s ease);
-                padding: 9px 0 9px 5px;
-                display: block;
-                &:hover{
-                    color: #f00 !important;
-                }
-              }
-            }
-        :hover >ul{
-            display: block;
-        }
-    }
-  }
-  &:hover .dmsp-container{display:block}
 }

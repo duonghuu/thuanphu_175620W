@@ -475,12 +475,7 @@
 //   0% { opacity: 1; }
 //   90% { opacity: 0; }
 // }
-// .element {
-//   width: 100px;
-//   height: 100px;
-//   background: black;
-//   @include animation('slide-down 5s 3');
-// }
+
 @mixin keyframes($animation-name) {
     @-webkit-keyframes #{$animation-name} {
         @content;
@@ -498,7 +493,12 @@
         @content;
     }
 }
-
+// .element {
+//   width: 100px;
+//   height: 100px;
+//   background: black;
+//   @include animation('slide-down 5s 3');
+// }
 @mixin animation($str) {
   -webkit-animation: #{$str};
   -moz-animation: #{$str};
@@ -600,23 +600,23 @@
   @include position(fixed, $args...);
 }
 
-@mixin bg($imgpath,$repeat: no-repeat,$size:null,$position:0 0) {
+@mixin bg($background-image,$background-repeat: no-repeat,$background-size:null,$background-position:0 0) {
     background: {
-        image: url($images-url + $imgpath);
-        @if $repeat != null {
-          repeat: $repeat;
+        image: url($images-url + $background-image);
+        @if $background-repeat != null {
+          repeat: $background-repeat;
         }
-        @if $position != null {
-          position: $position;
+        @if $background-position != null {
+          position: $background-position;
         }
-        @if $size != null {
-          size: $size;
+        @if $background-size != null {
+          size: $background-size;
         }
         
     }
 }
 
-@mixin boxstyle($display: flex, $justify-content: null , $align-items: null , $flex-wrap: null) {
+@mixin boxstyle($display: flex, $justify-content: null , $align-items: null , $flex-wrap: null, $flex-direction: null) {
   @if $display != null {
     @extend %boxstyle_#{$display};
   }
@@ -628,5 +628,32 @@
   }
   @if $flex-wrap != null {
     @extend %boxstyle_flex-wrap-#{$flex-wrap};
+  }
+  @if $flex-direction != null {
+    @extend %boxstyle_flex-direction-#{$flex-direction};
+  }
+}
+
+// Khai báo kích thước tương ứng với màn hình thiết bị
+   
+$XS:     425px;   
+$SM:     768px;  
+$MD:    992px;   
+$XL:   1200px;   
+  
+// media queries
+
+@mixin Responsive($canvas) {
+  @if $canvas == XS {
+   @media only screen and (min-width: $XS) { @content; } 
+  }
+  @else if $canvas == SM {
+   @media only screen and (min-width: $SM) { @content; } 
+  }
+  @else if $canvas == MD {
+   @media only screen and (min-width: $MD) { @content; } 
+  }
+  @else if $canvas == XL {
+   @media only screen and (min-width: $XL) { @content; } 
   }
 }
