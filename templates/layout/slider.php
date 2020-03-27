@@ -1,5 +1,5 @@
       <?php 
-      if($source == "index"){
+      if($template == "product_danhmuc"){
         $slider = get_result("select ten$lang as ten,photo,thumb from #_slider 
           where hienthi=1 and type='slider' order by stt");
          ?>

@@ -5,13 +5,7 @@
     <ul id="menu" class="nav">
         <li class="dash" id="menu1"><a class=" active" title="" href="index.php">
             <span>Trang chủ</span></a></li>
-            <li class="categories_li <?php if($_GET['com']=='news' && $_GET['type']=='loc-san-pham') echo ' activemenu' ?>"
-             id="menu_ttloc"><a href="" title="" class="exp"><span>Lọc sản phẩm</span><strong></strong></a>
-                <ul class="sub">
-                    <?php phanquyen_menu('Danh mục lọc','news','man_danhmuc','loc-san-pham'); ?>
-                    <?php phanquyen_menu('Quản lý lọc','news','man','loc-san-pham'); ?>
-                </ul>
-            </li>
+            
             <li class="categories_li <?php if($_GET['com']=='httt' || $_GET['com']=='order'
             || $_GET['type']=='thuonghieu' || $_GET['type']=='mausac' || $_GET['type']=='size'
             || $_GET['type']=='txtsp' || $_GET['type']=='san-pham' || $_GET['com']=='excel' )
@@ -22,22 +16,21 @@
                     <?php phanquyen_menu('Danh mục cấp 2','product','man_list','san-pham'); ?>
                     <?php //phanquyen_menu('Danh mục cấp 3','product','man_cat','san-pham'); ?>
                     <?php phanquyen_menu('Sản phẩm','product','man','san-pham'); ?>
-                    <?php phanquyen_menu('Quản lý hình thức thanh toán','httt','man',''); ?>
+                    <?php //phanquyen_menu('Quản lý hình thức thanh toán','httt','man',''); ?>
                     <?php //phanquyen_menu('Quản lý thương hiệu','news','man','thuonghieu'); ?>
                     <?php //phanquyen_menu('Quản lý màu sắc','news','man','mausac'); ?>
                     <?php //phanquyen_menu('Quản lý size','news','man','size'); ?>
                 </ul>
             </li>
             <li class="categories_li <?php if(in_array($_GET['type'], array('khuyen-mai','y-kien','thu-vien','chinh-sach'
-            ,'tai-sao','cong-trinh','tin-tuc','ve-chung-toi','ho-tro')) or $_GET['com']=='vnexpress') 
+            ,'tai-sao','cong-trinh','tin-tuc','ve-chung-toi','ho-tro','tuyen-dung','tu-van')) or $_GET['com']=='vnexpress') 
             echo ' activemenu' ?>" id="menu_tt"><a href="" title="" class="exp"><span>
             Bài viết</span><strong></strong></a>
             <ul class="sub">
                 <?php phanquyen_menu('Tin tức','news','man','tin-tuc'); ?>
+                <?php phanquyen_menu('Tuyển dụng','news','man','tuyen-dung'); ?>
+                <?php phanquyen_menu('Tư vấn','news','man','tu-van'); ?>
                 <?php phanquyen_menu('Chính sách','news','man','chinh-sach'); ?>
-                <?php phanquyen_menu('Tổng hợp khuyến mãi','news','man','khuyen-mai'); ?>
-                <?php phanquyen_menu('Về chúng tôi','news','man','ve-chung-toi'); ?>
-                <?php phanquyen_menu('Hỗ trợ khách hàng','news','man','ho-tro'); ?>
                 <?php //phanquyen_menu('Lấy tin từ Vnexpress','vnexpress','man',''); ?>
             </ul>
         </li>
@@ -46,11 +39,8 @@
         echo ' activemenu' ?>" id="menu_t"><a href="" title="" class="exp">
             <span>Trang tĩnh</span><strong></strong></a>
             <ul class="sub">
-                <?php phanquyen_menu('Miễn phí dùng thử','about','capnhat','mien-phi-dung-thu'); ?>
-                <?php phanquyen_menu('Tặng 1 năm bảo hành','about','capnhat','tang-1-nam-bao-hanh'); ?>
-                <?php phanquyen_menu('1 đổi 1 trong 1 năm','about','capnhat','1-doi-1-trong-1-nam'); ?>
-                <?php //phanquyen_menu('Giới thiệu','about','capnhat','gioi-thieu'); ?>
-                <?php //phanquyen_menu('Cập nhật liên hệ','about','capnhat','lienhe'); ?>
+                <?php phanquyen_menu('Giới thiệu','about','capnhat','gioi-thieu'); ?>
+                <?php phanquyen_menu('Cập nhật liên hệ','about','capnhat','lienhe'); ?>
                 <?php phanquyen_menu('Cập nhật footer','about','capnhat','footer'); ?>
             </ul>
         </li>
@@ -63,7 +53,7 @@
           <?php //phanquyen_menu('Hình thanh toán','lkweb','man','mxhle'); ?>
           <?php //phanquyen_menu('Quản lý liên kết web','lkweb','man','lkweb'); ?>
           <?php //phanquyen_menu('Quản lý hỗ trợ','yahoo','man','yahoo'); ?>
-          <?php phanquyen_menu('Quản lý Đăng ký nhận tin','newsletter','man',''); ?>
+          <?php //phanquyen_menu('Quản lý Đăng ký nhận tin','newsletter','man',''); ?>
       </ul>
   </li>
     <li class="categories_li gallery_li <?php if(in_array($type, array('logo','banner',
@@ -82,7 +72,7 @@
     <?php //phanquyen_menu('Banner trang trong','news','man','bntrong'); ?>
     <?php //phanquyen_menu('Text Đối tác','about','capnhat','txtdoitac'); ?>
     <?php phanquyen_menu('Đối tác','slider','man_photo','doi-tac'); ?>
-    <?php phanquyen_menu('Banner quảng cáo','slider','man_photo','quang-cao'); ?>
+    <?php //phanquyen_menu('Banner quảng cáo','slider','man_photo','quang-cao'); ?>
     <?php //phanquyen_menu('Banner quảng cáo dưới album','slider','man_photo','quang-cao2'); ?>
     <?php //phanquyen_menu('Quản lý quảng cáo 2 bên','slider','man_photo','letruot'); ?>
     <?php //phanquyen_menu('Cập nhật pupop quảng cáo','background','capnhat','pupop'); ?>
@@ -134,12 +124,11 @@ $_GET['com']=='user') echo ' activemenu' ?>" id="menu_cp"><a href="" title="" cl
     echo ' activemenu' ?>" id="menuseo"><a href="#" title="" class="exp"><span>Hổ Trợ SEO
     </span><strong></strong></a>
     <ul class="sub">
-        <?php //phanquyen_menu('Dịch vụ','title','capnhat','dichvu'); ?>
-        <?php //phanquyen_menu('Tin tức','title','capnhat','tintuc'); ?>
-        <?php //phanquyen_menu('Sản phẩm','title','capnhat','sanpham'); ?>
-        <?php //phanquyen_menu('Tư vấn thiết kế','title','capnhat','tuvan'); ?>
-        <?php //phanquyen_menu('Xây dựng sửa chữa','title','capnhat','xaydung'); ?>
-        <?php //phanquyen_menu('Công trình','title','capnhat','congtrinh'); ?>
+        <?php phanquyen_menu('Tuyển dụng','title','capnhat','tuyen-dung'); ?>
+        <?php phanquyen_menu('Chính sách','title','capnhat','chinh-sach'); ?>
+        <?php phanquyen_menu('Tin tức','title','capnhat','tin-tuc'); ?>
+        <?php phanquyen_menu('Sản phẩm','title','capnhat','san-pham'); ?>
+        <?php phanquyen_menu('Tư vấn','title','capnhat','tu-van'); ?>
     </ul>
 </li>
 </ul>

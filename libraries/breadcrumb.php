@@ -6,7 +6,8 @@ class breadcrumb{
 		$this->link[] = array("name"=>$name,"link"=>$link);
 	}
 	public function display(){
-		$str = '<ul class="breadcrumb">';
+		$str = '<div class="header-navigate">
+			<div class="container"><ul class="breadcrumb breadcrumb-arrow">';
 		foreach($this->link as $k=>$v){
 			$cls = '';
 			if($k==(count($this->link) -1)){
@@ -18,7 +19,8 @@ class breadcrumb{
 				$str.='<li class="breadcrumb-item '.$cls.'">'.$v["name"].'</li>';
 			}
 		}
-		$str.="</ul>";
+		$str.="</ul></div>
+		</div>";
 		return $str;
 	}
 }

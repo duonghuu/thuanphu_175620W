@@ -3,19 +3,26 @@
 	and (max-width: $device_size_medium) 
 {
   @include setHeaderCenter;
-  @include setLeftRightMobile;
-  @include setCartMobile;
+  @include setSliderSmall;
+  @include setDoitacSmall;
+  @include setSanPhamTieuBieuSmall;
+  // @include setLeftRightMobile;
+  // @include setCartMobile;
   @include showMobileMenu;
   // @include setProductColumnMobile(6, 2%);
   // @include setTaiSaoFull;
   // @include setTinVideoFull;
-  @include setFooterMobile;
+  @include setFooterSmall;
   @include setCopyrightCenter;
-  @include setProductDanhmuc;
+  .intro-mxh{
+    display: none;
+  }
   // @include setProductMobile;
   // #footer {
   //     .copyright{
   //         padding-bottom: 50px;
   //     }
   //   }
+
+
 }

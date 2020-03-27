@@ -540,7 +540,7 @@ form#frm_dknt {
 div.main_content {
     position: relative;
     z-index: 5;
-    margin: 1em auto;
+    margin: 0 auto 1em;
 
     @at-root .clstrangchu #{&},.clsindex #{&} {
         margin: 0 auto;

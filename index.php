@@ -36,8 +36,11 @@ $_SESSION['dong'] = lay_banner('dong');
     <?= $company['codethem'] ?>
 </head>
 <?php //include _template."layout/background.php";?>
-<body class="cls<?= $template ?>" data-tit="<?= $source."-".$template ?>" <?=$str_background?> >
-    <?php /* <div class="wap_load"><div class="cssload-thecube"><div class="cssload-cube cssload-c1"></div><div class="cssload-cube cssload-c2"></div><div class="cssload-cube cssload-c4"></div><div class="cssload-cube cssload-c3"></div></div></div> */?>
+<body class="cls<?= $template ?>" <?=$str_background?> >
+    <?php /* <div class="wap_load"><div class="cssload-thecube"><div class="cssload-cube cssload-c1"></div>
+    <div class="cssload-cube cssload-c2"></div><div class="cssload-cube cssload-c4"></div>
+    <div class="cssload-cube cssload-c3"></div></div></div> */?>
+    <?php if($source != "index"){ ?>
     <div id="wapper"  >
         <section class="head-main">
             <?php 
@@ -45,11 +48,11 @@ $_SESSION['dong'] = lay_banner('dong');
             include _template."layout/menu_top.php";
             include _template."layout/valak_menu.php";
             include _template."layout/slider.php";
-            if($source=="index") include _template."layout/doitac.php";
+            if($template == "product_danhmuc") include _template."layout/doitac.php";
+            if($source != "index" && $template != "product_danhmuc") echo $bread->display();
             ?>
             <div class="main_content <?php if($source!="index1") echo 'container';  ?>">
-                <?php if($template == 'product') {  ?>
-                    <?php echo $bread->display(); ?>
+                <?php if($template == 'productxx') {  ?>
                     <div class="clearfix">
                         <div class="left">
                             <?php include _template."layout/left.php";?>
@@ -66,7 +69,6 @@ $_SESSION['dong'] = lay_banner('dong');
         <?php 
         if($source=="index") include _template."layout/bottom.php";
         include _template."layout/footer.php";
-        // include _template."layout/valak_menu.php";
         ?>
     </div><!---END .wapper-->
     <?php 
@@ -77,6 +79,9 @@ $_SESSION['dong'] = lay_banner('dong');
     // include _template."layout/cart_popup.php";
     if($deviceType=="computer") include _template."layout/phone3.php";
     include _template."layout/phone2.php";
+    }else{
+        include _template.$template."_tpl.php";
+    }
     include _template."layout/js.php";
     ?>
     <?=$company['codethem2']?>

@@ -1,6 +1,4 @@
 <?php /* <div class="tieude_giua"><div><?=$title_cat?></div></div> */?>
-<?php 
-if($type!='mon') echo $bread->display(); ?>
 <div class="box_container">
   <div class="box_detail_product">
     <div class="content ">

@@ -9,7 +9,7 @@ $thuoctinh = json_decode($company["thuoctinh"],true);
 $datacom = array(
 	array("tbl"=>"product_danhmuc","field"=>"id_danhmuc","source"=>"product","type"=>"sanpham","com"=>"san-pham"),
 	array("tbl"=>"product_list","field"=>"id_list","source"=>"product","type"=>"sanpham","com"=>"san-pham"),
-	array("tbl"=>"product_cat","field"=>"id_cat","source"=>"product","type"=>"sanpham","com"=>"san-pham"),
+	// array("tbl"=>"product_cat","field"=>"id_cat","source"=>"product","type"=>"sanpham","com"=>"san-pham"),
 	array("tbl"=>"product","field"=>"id","source"=>"product","type"=>"sanpham","com"=>"san-pham"),
 
 	// array("tbl"=>"news_danhmuc","field"=>"id_danhmuc","source"=>"news","type"=>"cokhi","com"=>"co-khi"),
@@ -17,9 +17,9 @@ $datacom = array(
 	// array("tbl"=>"news_cat","field"=>"id_cat","source"=>"news","type"=>"cokhi","com"=>"co-khi"),
 	// array("tbl"=>"news","field"=>"id","source"=>"news","type"=>"cokhi","com"=>"co-khi"),
 
-	array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"thong-tin","type"=>"thongtin"),
-	array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"nhuong-quyen","type"=>"nhuongquyen"),
-	array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"tin-tuc","type"=>"tintuc"),
+	array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"tu-van","type"=>"tu-van"),
+	array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"tin-tuc","type"=>"tin-tuc"),
+	array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"tuyen-dung","type"=>"tuyen-dung"),
 	array("tbl"=>"about","field"=>"id","source"=>"about","com"=>"lien-he","type"=>"lienhe"),
 	array("tbl"=>"about","field"=>"id","source"=>"about","com"=>"gioi-thieu","type"=>"gioithieu"),
 );
@@ -68,19 +68,19 @@ switch($com)
 	$template = isset($_GET['id']) ? "news_detail" : "news";
 	$type_og = isset($_GET['id']) ? "article" : "object";
 	break;
-	case 'khuyen-mai':
-	$type = "khuyen-mai";
-	$title = "Khuyến mãi";
-	$title_cat = "Khuyến mãi";
+	case 'tuyen-dung':
+	$type = "tuyen-dung";
+	$title = _tuyendung;
+	$title_cat = _tuyendung;
 	$title_other = _tinlienquan;
 	$source = "news";
 	$template = isset($_GET['id']) ? "news_detail" : "news";
 	$type_og = isset($_GET['id']) ? "article" : "object";
 	break;
-	case 'dich-vu':
-	$type = "dich-vu";
-	$title = _dichvu;
-	$title_cat = _dichvu;
+	case 'tu-van':
+	$type = "tu-van";
+	$title = "Tư vấn";
+	$title_cat = "Tư vấn";
 	$title_other = _tinlienquan;
 	$source = "news";
 	$template = isset($_GET['id']) ? "news_detail" : "news";

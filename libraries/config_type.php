@@ -16,13 +16,13 @@ switch($type){
 	case 'san-pham':
 	switch($act){
 		case 'danhmuc':
-		$config['type'] = array('ten','seo','noibat','hinhanh');
+		$config['type'] = array('ten','seo','hinhanh');
 		$config['title'] = array('noibat'=>"Nổi bật",'tieubieu'=>"Hiện menu",'hinhanh2'=>"Icon");
-		@define ( _width_thumb , 400 );
-		@define ( _height_thumb , 560 );
+		@define ( _width_thumb , 360 );
+		@define ( _height_thumb , 360 );
 		@define ( _style_thumb , 1 );
-		@define ( _width_thumb2 , 400 );
-		@define ( _height_thumb2 , 560 );
+		@define ( _width_thumb2 , 360 );
+		@define ( _height_thumb2 , 360 );
 		@define ( _widthhinhanh_thumb , 40 );
 		@define ( _heighthinhanh_thumb , 40 );
 		@define ( _stylehinhanh_thumb , 2 );
@@ -31,11 +31,13 @@ switch($type){
 		break;
 
 		case 'list':
-		$config['type'] = array('seo','ten');
-		$config['title'] = array('noibat'=>"Hiện cột left");
-		@define ( _width_thumb , 300 );
-		@define ( _height_thumb , 300 );
-		@define ( _style_thumb , 2 );
+		$config['type'] = array('seo','ten','hinhanh','noibat');
+		$config['title'] = array('noibat'=>"Nổi bật");
+		@define ( _width_thumb , 400 );
+		@define ( _height_thumb , 560 );
+		@define ( _style_thumb , 1 );
+		@define ( _width_thumb2 , 400 );
+		@define ( _height_thumb2 , 560 );
 		break;
 
 		case 'cat':
@@ -232,12 +234,18 @@ switch($type){
 	}
 	break;
 	case 'tin-tuc':
+	case 'tuyen-dung':
+	case 'tu-van':
+	case 'chinh-sach':
 	switch($act){
 		case 'danhmuc':
 		$config['type'] = array('seo','ten');
 		break;
 		default:
-		$config['type'] = array('seo','ten','noidung','mota','hinhanh','noibat');
+		$config['type'] = array('seo','ten','noidung','mota','hinhanh');
+		if($type == "tin-tuc"){
+			$config['type'][] = "noibat";	
+		}
 		@define ( _width_thumb , 400 );
 		@define ( _height_thumb , 300 );
 		@define ( _style_thumb , 1 );
@@ -328,7 +336,7 @@ switch($type){
 	}
 	break;
 //-------------chinh sach / ho tro / cham soc khach hang------------------
-	case 'chinh-sach':
+	case 'chinh-sach1':
 	switch($act){
 		default:
 		$config['type'] = array('seo','ten','noidung');
@@ -478,7 +486,7 @@ switch($type){
 	case 'gioi-thieu':
 	switch($act){
 		default:
-		$config['type'] = array('seo','ten','noidung','mota','hinhanh');
+		$config['type'] = array('seo','noidung');
 		@define ( _width_thumb , 585 );
 		@define ( _height_thumb , 400 );
 		@define ( _style_thumb , 2 );

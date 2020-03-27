@@ -1,23 +1,20 @@
-section.section-breadcrumb {
-	background: $breadcrumb-color-background;
-	padding: 2% 0;
-
-	h3.title {
-		@include setFont(24px, $breadcrumb-color-text, bold );
-		text-transform: uppercase;
-	}
-
-	ol.breadcrumb {
-		li {
-			a {
-				@include setFont(14px, $breadcrumb-color-text);
-				&:hover {
-					color: #F15F43
-				}
+.header-navigate{
+	background-color: $bg-breadcrumb;
+	margin-bottom: 20px;
+}
+.breadcrumb {
+	background-color: $bg-breadcrumb;
+	padding: 8px 0;
+	margin-bottom: 0;
+	&.breadcrumb-arrow{
+		.breadcrumb-item{
+			@include setFont(13px, #1f2022);
+			@include setTagAHover(#1f2022, #25aef5);
+			a{
+				@include setFont(13px, #1f2022);
 			}
-
 			&.active {
-				color: #888888;
+			  color: #707070;
 			}
 		}
 	}

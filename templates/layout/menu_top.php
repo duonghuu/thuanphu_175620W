@@ -2,6 +2,7 @@
 <div class="container">
   <div class="dmspbox">
     <p class="tit text-uppercase"><i class="fas fa-bars" aria-hidden="true"></i> <?php echo _danhmucsanpham ?></p>
+    <?php if($source != "index" && $template != "product_danhmuc"){ ?>
     <div class="dmsp-container " >
        <ul class="scrollstyle-4">
       <?php foreach($product_danhmuc as $kdm => $vdm){
@@ -21,6 +22,8 @@
       <?php } ?>
       </ul>
     </div>
+    
+    <?php } ?>
   </div>
     <div class="main-nav">
       <ul >

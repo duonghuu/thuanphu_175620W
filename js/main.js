@@ -6026,7 +6026,7 @@ $('.doitac-main').on({
       accessibility: false,
       slidesToShow: 7,
       slidesToScroll: 1,
-      autoplay: false,
+      autoplay: true,
       autoplaySpeed: 3000,
       speed: 1000,
       arrows: true,
@@ -6060,7 +6060,7 @@ $('.doitac-main').on({
         accessibility: false,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 3000,
         speed: 1000,
         arrows: true,
@@ -6084,7 +6084,7 @@ $('.doitac-main').on({
         accessibility: false,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 3000,
         speed: 1000,
         vertical: true,
@@ -6110,7 +6110,7 @@ $('.doitac-main').on({
         accessibility: false,
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 3000,
         speed: 1000,
         arrows: true,
@@ -6248,15 +6248,15 @@ $(document).ready(function() {
     //     })
     //   });
     $(window).scroll(function(){
-      // var cach_top = $(window).scrollTop();
-      // var heaigt_header = $('.hd-bg').height();
-      // if(cach_top >= heaigt_header){
-      //   $('.nav-bg').css({position: 'fixed', top: '0px', zIndex:99999});
-      //   $('.nav-bg').addClass('fixed');
-      // }else{
-      //   $('.nav-bg').css({position: 'relative', top: 'auto'});
-      //   $('.nav-bg').removeClass('fixed');
-      // }
+      var cach_top = $(window).scrollTop();
+      var heaigt_header = $('.hd-bg').height();
+      if(cach_top >= heaigt_header){
+        $('.nav-bg').css({position: 'fixed', top: '0px', zIndex:99999});
+        $('.nav-bg').addClass('fixed');
+      }else{
+        $('.nav-bg').css({position: 'relative', top: 'auto'});
+        $('.nav-bg').removeClass('fixed');
+      }
     });
   }
   

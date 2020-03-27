@@ -10,11 +10,8 @@ if($source=="index"){
         where type='thu-vien' order by stt asc");
     $ykien=get_result("select ten$lang as ten,mota$lang as mota,chucvu,id,type,tenkhongdau,thumb,photo from #_news 
         where type='y-kien' order by stt asc");
-    $spnoibat=get_result("select ten$lang as ten,mota$lang as mota,tenkhongdau,id,thumb,photo,type,gia,giakm 
-        from #_product where type='san-pham' and noibat>0
-         and hienthi>0 order by stt asc");
-    $product_danhmucnb=get_result("select ten$lang as ten,tenkhongdau,id,type,thumb,photo from
-     #_product_danhmuc where type='san-pham' and noibat>0 and hienthi>0 order by stt asc");
+    
+    
     $quangcao=get_result("select ten$lang as ten,mota$lang as mota,link,photo,thumb
      from #_slider where hienthi=1 and type='quang-cao' order by stt");
     $congtrinh=get_result("select mota$lang as mota,ten$lang as ten,tenkhongdau,id,

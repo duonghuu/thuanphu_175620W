@@ -73,12 +73,17 @@
                 
             }
             
-            &:hover, &.active {
+            &:hover {
                 &>a {
                     @extend %hover_menu_color;
                 }
                 &>ul{
                     display: block;
+                }
+            }
+            &.active{
+                &>a {
+                    @extend %hover_menu_color;
                 }
             }
         }

@@ -452,16 +452,30 @@
   -o-transition: $args;
   transition: $args;
 }
-@mixin opacity($opacity) {
+@mixin opacity($opacity: 0.5) {
+  $opacityPercentage: ($opacity * 100);
+　　filter: alpha(opacity=$opacityPercentage);
   opacity: $opacity;
-　　filter: alpha(opacity=($opacity * 100));
 }
 @mixin font-size($size, $base: 16) {
   font-size: $size + px;
   font-size: ($size / $base) +rem;
 }
-@mixin bg-gradient($angle: 180deg, $color: #0bd, $amount: 20%) {
-　　background: linear-gradient($angle, $color, adjust-hue($color, $amount)) fixed;
+@mixin linear-gradient($top-color, $bottom-color, $opacity) {
+    background: -moz-linear-gradient(top, rgba($top-color, $opacity) 0%, rgba($bottom-color, $opacity) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba($top-color, $opacity) 0%, rgba($bottom-color, $opacity) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba($top-color, $opacity) 0%, rgba($bottom-color, $opacity) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str(rgba($top-color, $opacity))}', endColorstr='#{ie-hex-str(rgba($bottom-color, $opacity))}',GradientType=0 ); /* IE6-9 */
+}
+// @include bg-linear-gradient(#00FFFF,#0080FF,45deg);
+@mixin bg-linear-gradient($color-one,$color-two,$degrees) {
+  background: -moz-linear-gradient($degrees, $color-one 0%, $color-two 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, $color-one), color-stop(100%, $color-two)); /* safari4+,chrome */
+  background: -webkit-linear-gradient($degrees, $color-one 0%, $color-two 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient($degrees, $color-one 0%, $color-two 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient($degrees, $color-one 0%, $color-two 100%); /* ie10+ */
+  background: linear-gradient($degrees, $color-one 0%, $color-two 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-one', endColorstr='$color-two',GradientType=1 ); /* ie6-9 */
 }
 @mixin gradient-text($angle: 45deg, $color: #f82, $amount: 35%) {
 　　color: $color;
@@ -469,6 +483,36 @@
 　　-webkit-text-fill-color: transparent;
 　　-webkit-background-clip: text;
 　　display: inline-block;
+}
+// @include text-shadow(2px,2px,2px,rgba(0,0,0,.25));
+// @include text-shadow(-1px,-2px,3px,#00FFFF, 1px,2px,3px,#0080FF);
+@mixin text-shadow($x1:2px, $y1:2px, $blur1:5px, $color1:black, $x2:null, $y2:null, $blur2:null, $color2:null){
+  @if ($x2) {
+   text-shadow: $x1 $y1 $blur1 $color1, $x2 $y2 $blur2 $color2; 
+  }
+  @else {
+    text-shadow: $x1 $y1 $blur1 $color1;
+  }
+}
+// @include border-radius(1em);
+// @include border-radius(25px,5px,25px,5px);
+@mixin border-radius($top-left:10px, $top-right:null, $bottom-right:null, $bottom-left:null){
+  -webkit-border-radius: $top-left $top-right $bottom-right $bottom-left;
+     -moz-border-radius: $top-left $top-right $bottom-right $bottom-left;
+      -ms-border-radius: $top-left $top-right $bottom-right $bottom-left;
+          border-radius: $top-left $top-right $bottom-right $bottom-left;  
+}
+// .placeholder {
+// @include placeholder {
+//     color: #0066CC;
+//     background: #ccffff;
+//   }
+//   }
+@mixin placeholder() {
+  input::-webkit-input-placeholder {@content}
+  input:-moz-placeholder           {@content}
+  input::-moz-placeholder          {@content}
+  input:-ms-input-placeholder      {@content}
 }
 // Animations and keyframes
 // @include keyframes(slide-down) {

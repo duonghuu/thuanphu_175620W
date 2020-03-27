@@ -15,10 +15,10 @@
   <?php /* <?php if($deviceType!="computer"){ ?>
           <a href="gio-hang.html" class="giohang_fix"><i></i><span><?= count($_SESSION["cart"]) ?></span></a>
         <?php } ?> */?>
-  <div class="valak-search"> <input type="text" id="txtCountry2" class="form-control keyword placeholder-1"
-   required="true" value="<?=_nhaptukhoatimkiem?>..." onclick="if(this.value=='<?=_nhaptukhoatimkiem?>...')
-   {this.value=''}" onblur="if(this.value==''){this.value='<?=_nhaptukhoatimkiem?>...'}"> 
-   <span onclick="onSearch($(this));return false;" class="btn_search"><i class="fas fa-search"></i></span> </div>
+  <?php /* <div class="valak-search"> <input type="text" id="txtCountry2" class="form-control keyword placeholder-1"
+     required="true" value="<?=_nhaptukhoatimkiem?>..." onclick="if(this.value=='<?=_nhaptukhoatimkiem?>...')
+     {this.value=''}" onblur="if(this.value==''){this.value='<?=_nhaptukhoatimkiem?>...'}"> 
+     <span onclick="onSearch($(this));return false;" class="btn_search"><i class="fas fa-search"></i></span> </div> */?>
 </div>
 <div id="valak_openmmenu">
   <div id="valak_main">
@@ -29,34 +29,7 @@
       <div class="linebrk_valak"></div>
       <div class="main_manu_valak">
         <ul >
-          <?php //include _template."layout/menu_content.php";?>
-          <?php foreach($product_danhmuc as $kdm => $vdm){
-            
-            $dmsp1 = get_result("select ten$lang as ten,tenkhongdau,id,type from #_product_list where type='san-pham' and
-             id_danhmuc='".$vdm["id"]."' and hienthi>0 order by stt asc");
-            $clshas = (!empty($dmsp1))?"has-sub":"";  
-          ?>
-          <li class=""><a href="san-pham/<?= $vdm["tenkhongdau"] ?>-<?= $vdm["id"] ?>">
-            <?= $vdm["ten"] ?></a>
-            <?php 
-            if($clshas == 'has-sub'){ echo '<ul>';
-            foreach($dmsp1 as $k => $v){ ?>
-            <li><a href="san-pham/<?= $v["tenkhongdau"] ?>-<?= $v["id"] ?>/"><?= $v["ten"] ?></a></li>
-          <?php } echo '</ul>'; }?>
-          </li>
-          <?php } ?>
-          <li><a href="khuyen-mai.html">
-            Tổng hợp khuyến mãi
-          </a></li>
-          <li><a href="mien-phi-dung-thu.html">
-            Miễn phí dùng thử
-          </a></li>
-          <li><a href="tang-1-nam-bao-hanh.html">
-            Tặng 1 năm bảo hành
-          </a></li>
-          <li><a href="1-doi-1-trong-1-nam.html">
-            1 đổi 1 trong 1 năm
-          </a></li>
+          <?php include _template."layout/menu_content.php";?>
       </div>
       <div class="linebrk_valak"></div>
       <div class="valak_mmenuf">

@@ -1,28 +1,41 @@
 @media screen 
 	and (max-width: $device_size_mobile) {
         @include setHeaderCenter;
-        @include setLeftRightMobile;
-        @include setCartMobile;
+        @include setSliderSmall;
+        @include setDoitacSmall;
+        @include setSanPhamTieuBieuSmall;
+
+        // @include setLeftRightMobile;
+        // @include setCartMobile;
         @include showMobileMenu;
-        @include setProductColumnMobile(6, 1%);
+        @include setProductColumnMobile(6, 5%);
         // @include setTaiSaoFull;
         @include setProductMobile;
-        @include setFooterMobile;
+        @include setFooterSmall;
         @include setCopyrightCenter;
-        @include setProductDanhmuc;
-        .hd-bg .hd-bot .hd-bot-flex .hd-bot-right__item + .hd-bot-right__item,
-        .hd-bg .hd-bot .hd-bot-flex .hd-bot-right__item .hd-bot-right__text,
-        .idx-tit a.xemthem{
+        // @include setProductDanhmuc;
+        .intro-hotline,.intro-info p,.intro-mxh, .banner p, .idx-tit p{
             display: none;
         }
-        .hd-bg .hd-bot .hd-bot-flex .hd-bot-right{
-            @include absolute($right: 1em);
+        #footer .ft-flex .ft-baiviet{
+            width: 100%;
         }
-        .hd-bg .hd-bot .hd-bot-flex{
-            @include justify-content(center);
+        .intro-product-item{
+            @include grid-col($col: 12, $grid-columns: 12);
+            a{
+                max-width: 240px;
+            }
         }
-        .pr-box article .info p span{
-            font-size: 16px;
+        .intro-head .intro-head-flex{
+            @include flex-wrap(wrap);
+            .intro-logo{
+                width: 100%;
+                display: block;
+                text-align: center;
+                img{
+                    max-width: 100px !important;
+                }
+            }
         }
     // #footer {
     //     .copyright{

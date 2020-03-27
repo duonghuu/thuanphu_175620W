@@ -10,9 +10,9 @@ $dem_thu = get_result("select count(id) as dem from #_lienhe where type='lienhe'
         <ul>
             <li><a href="http://<?=$config_url?>" title="" target="_blank"><img src="./images/icons/topnav/mainWebsite.png" alt="" /><span>Vào trang web</span></a></li>
             
+            <?php /* 
             <li><a href="index.php?com=order&act=man" title=""><img src="./images/icons/topnav/cart.png" 
             alt="" style="height: 15px;margin-top: 6px;" /><span>Đơn hàng</span></a></li>
-            <?php /* 
 
             <li><a href="index.php?com=user&act=man" title="" target="_blank">
             <img src="./images/icons/topnav/profile.png" alt="" style="height: 15px;margin-top: 6px;" />

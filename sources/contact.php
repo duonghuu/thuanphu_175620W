@@ -3,7 +3,7 @@
 	$title = $company_contact['title'];
 	$keywords = $company_contact['keywords'];
 	$description = $company_contact['description'];	
-	
+	$bread->add($title_cat,$com.".html");
 	if(!empty($_POST)){
 		if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptchaContact'])) {
 

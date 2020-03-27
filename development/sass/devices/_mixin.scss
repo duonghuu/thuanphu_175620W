@@ -61,13 +61,28 @@
     @include font-size(24, 16);
   }
   }
-/*========= HEADER ===============*/
-@mixin setHeaderCenter(){
-  .hd-top, #search{
+/*========= SLIDER ===============*/
+@mixin setSliderSmall(){
+  .box-menu-slider{
     display: none;
   }
-  #slideshow{
-    margin-left: unset;
+}
+/*========= HEADER ===============*/
+@mixin setHeaderCenter(){
+  .hd-bg {
+      .hd-flex{
+        @include justify-content(flex-start);
+      }
+  }
+  .banner{
+      width: auto;
+      @include flex(1);
+      p{
+        font-size: em(15);
+      }
+  }
+  .hd-right{
+      display: none;
   }
 }
 /*========= MENU ===============*/
@@ -77,19 +92,31 @@
   }
   #valak_mmenu{
     display: flex;
-    background-color: $bg-header-top;
+    background-color: $bg-menu;
   }
   .toolbar{
-    background-color: $bg-header-top !important; 
+    background-color: $bg-menu !important; 
   }
   .logo_valak{
-    background-color: $bg-header-top !important; 
+    background-color: $bg-menu !important; 
   }
   .hd-bg{
     display: block;
   }
 }
 /*========= HOME ===============*/
+@mixin setSanPhamTieuBieuSmall(){
+  .sptieubieu-flex .img-danhmuc{
+    display: none;
+  }
+  $gutter-width: percentage(26/738);
+  .sptieubieu-flex .product-grid {
+    @include grid($gutter: $gutter-width);
+    .pr-box{
+      @include grid-col($col: 4, $gutter: $gutter-width);
+    }
+  }
+}
 @mixin setProductDanhmuc($p_prodmCol: 3){
   .spnoibat-flex {
     .feature-img{
@@ -130,7 +157,7 @@
 }
 /*========= PRODUCT ===============*/
 @mixin setProductColumnMobile($p_col: 6, $p_gutter: 0){
-  .pr-box,.spnoibat-flex .product-grid .pr-box{
+  .pr-box,.spnoibat-flex .product-grid .pr-box,.sptieubieu-flex .product-grid .pr-box{
     @include grid-col($col: $p_col, $grid-columns: 12, $col-offset: null, $gutter: $p_gutter);  
   }
 }
@@ -142,8 +169,14 @@
     }
   }
 }
+/*========= Doitac ===============*/
+@mixin setDoitacSmall(){
+  .doitac-bg .doitac-main{
+    width: 100%;
+  }
+}
 /*========= FOOTER ===============*/
-@mixin setFooterMobile(){
+@mixin setFooterSmall(){
   #footer {
     .ft-flex {
       @include flex-wrap(wrap);

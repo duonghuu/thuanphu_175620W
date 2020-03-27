@@ -295,7 +295,7 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 	}
 	function showProduct($v,$options=array(),$k=null){
 		global $lang,$company,$com;
-		$link = get_url($v,'san-pham');
+		$link = get_url($v, $v["type"]);
 		// $giaspgiam = ($v["giakm"]>0)?'<span class="giam">-'.tinh_phantram($v["gia"],$v["giakm"]).
 		// '%</span>':"";
 		// $cls_moi = ($v["spmoi"]>0)?'<i class="new">new</i>':"";

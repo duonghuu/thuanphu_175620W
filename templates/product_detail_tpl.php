@@ -1,5 +1,4 @@
 <?php /* <div class="tieude_giua"><div><?=_chitiet?></div></div> */?>
-<?php echo $bread->display(); ?>
 <div class="box_container ">
 	<div class="wap_pro">
     <?php 

@@ -198,3 +198,92 @@
     @include setFont(15px, #fff);
     
 }
+.intro-bg{
+    @include bg("bg.jpg", $background-size: cover);
+    position: relative;
+    height: 100vh;
+}
+.intro-head{
+  .intro-head-flex{
+    @include boxstyle($display: flex, $justify-content: space-between, $align-items: flex-end);
+  }
+}
+.intro-logo{
+  img{
+
+  }
+}
+.intro-banner{
+  img{
+
+  }
+}
+.intro-info{
+    p{
+        @include setFont(22px, #fff, 400, "Arial");
+        margin-bottom: 0;
+        text-align: center;
+    }
+}
+.intro-body{
+    
+}
+.intro-hotline{
+    @include setFont(22px, #fff, 400, "Arial");
+  a{
+    color: #fff;
+  }
+}
+.intro-product{
+    @include grid($display: flex, $flex-wrap: wrap);
+  &-item{
+    @include grid-col($col: 6, $grid-columns: 12);
+    @include setTagAHover(#000, #f00);
+    a{
+        display: block;
+        position: relative;
+        max-width: 390px;
+        margin: 20px auto;
+        @include transition(all 0.2s ease);
+      figure{
+        img{
+
+        }
+      }
+      h2{
+        font:{
+            size: 20px;
+            weight: 700;
+            family: "Arial";
+        };
+        text-transform: uppercase;
+        @include bg-linear-gradient(#ffb400,#ffe119,90deg);
+        @include boxstyle($display: inline-flex, $align-items: center, $justify-content: center);
+        @include absolute($right: 0, $bottom: 50px);
+        min-height: 50px;
+        border-radius: 30px;
+        padding: 0 45px
+      }
+    }
+  }
+}
+.intro-foot{
+    min-height: 43px;
+    background-color: #363636;
+    @include setFont(14px, #fff, 400, "Arial");
+    @include boxstyle($display: flex, $justify-content: center, $align-items: center);
+    @include absolute($left: 0, $bottom: 0, $right: 0);
+}
+.intro-mxh{
+    border: 1px dashed #fff;
+    border-radius: 5px;
+    padding: 20px;
+    .mxh.mxh-intro  {
+        @include justify-content(center);
+        margin-bottom: 7px;
+    }
+    p{
+        @include setFont(16px, #fff, 400, "Arial");
+        margin-bottom: 0;
+    }
+}

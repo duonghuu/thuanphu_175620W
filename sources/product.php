@@ -173,6 +173,16 @@ if($id>0)
 
 		$linkcoban =$com."/".$title_bar['tenkhongdau']."-".$loc_danhmuc."&search=".$s_search;
 
+		$product_danhmucnb = get_result("select ten$lang as ten,tenkhongdau,id,type,thumb,photo from
+		 #_product_list where type='san-pham' and id_danhmuc='".$id_danhmuc."' and noibat>0 and 
+		    hienthi>0 order by stt asc");
+		$product_list = get_result("select ten$lang as ten,tenkhongdau,id,type,thumb,photo from
+		 #_product_list where type='san-pham' and id_danhmuc='".$id_danhmuc."' and 
+		    hienthi>0 order by stt asc");
+		$spnoibat=get_result("select ten$lang as ten,mota$lang as mota,tenkhongdau,id,thumb,photo,type,gia,giakm 
+		    from #_product where type='san-pham' and id_danhmuc='".$id_danhmuc."' and noibat>0
+		     and hienthi>0 order by stt asc");
+		$template = "product_danhmuc";
 
 	}
 	//Tất cả sản phẩm

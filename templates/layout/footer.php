@@ -12,6 +12,7 @@
           <p class="ft-tit text-uppercase"><span>Chính sách hỗ trợ</span></p>
           <?= for1("news","chinh-sach","chinh-sach",".html") ?>
         </div>
+        <?php  if($deviceType != "phone"){ ?>
         <div class="ft-fanpage">
           <p class="ft-tit text-uppercase"><span>Fanpage facebook</span></p>
           <div class="fanpageplace">
@@ -26,6 +27,8 @@
             </div>      <!-- end fb-page  -->
           </div>
         </div>
+        
+        <?php } ?>
     </div>
   </div>
 </div>
@@ -44,5 +47,6 @@
   </div>
 </div>*/?>
 </footer>
-<div class="codebando"></div>
+<?php if($source!="contact" && $deviceType == "computer"){ ?>
+<div class="codebando"></div><?php } ?>
           <?php /* <div class="codebando"><?= $company["bando"] ?></div>  include _template."layout/dangkynhantin.php";<img src="http://placehold.it/600x520" alt="" style="   -webkit-clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);   "> https://bennettfeely.com/clippy/ */?>
