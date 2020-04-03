@@ -18,12 +18,12 @@ if($source=="index"){
         thumb,photo,type from #_news where type='cong-trinh' and noibat>0 and hienthi>0 order by stt asc");
     $taisao=get_result("select mota$lang as mota,ten$lang as ten,tenkhongdau,id,
         thumb,photo,type from #_news where type='tai-sao' and hienthi>0 order by stt asc");
-    $tinnb=get_result("select mota$lang as mota,ten$lang as ten,tenkhongdau,id,thumb,photo
-        ,type,ngaytao,luotxem from #_news where type='tin-tuc' and noibat>0 and hienthi>0 order by stt asc");
-    $c_tinnb=count($tinnb);
-    $video = get_result("select ten$lang as ten,link,id from #_video where type='video'
-     and hienthi=1 order by stt asc");
 }
+$tinnb=get_result("select mota$lang as mota,ten$lang as ten,tenkhongdau,id,thumb,photo
+    ,type,ngaytao,luotxem from #_news where type='tin-tuc' and noibat>0 and hienthi>0 order by stt asc");
+$c_tinnb=count($tinnb);
+$video = get_result("select ten$lang as ten,link,id from #_video where type='video'
+ and hienthi=1 order by stt asc");
 $product_danhmuc=get_result("select ten$lang as ten,tenkhongdau,id,type,thumb,photo from
  #_product_danhmuc where type='san-pham' and hienthi>0 order by stt asc");
 

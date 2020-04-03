@@ -47,7 +47,8 @@
         &::after {
         }
     }
-    p{
+    marquee{
+        @include flex(1);
         @include setFont(20px, #4c4c4c, 400, "Arial");
         margin: 0 0 0 23px;
         a{
@@ -103,6 +104,7 @@
   .product-grid{
     $gutter-width: percentage(14/1200);
     @include grid($gutter: $gutter-width);
+    @include flex(1);
     .pr-box{
         @include grid-col($col: 4, $gutter: $gutter-width);
         .imgsp{

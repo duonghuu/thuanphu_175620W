@@ -100,7 +100,7 @@ function get_main_list()
 }
 function get_main_category()
 {
-    $getdata = get_result("select * from table_product_cat where id_list=".$_REQUEST['id_list']." order by stt,id desc");
+    $getdata = get_result("select * from table_product_cat where id_list='".$_REQUEST['id_list']."' order by stt,id desc");
     $str='
     <select id="id_cat" name="id_cat" onchange="select_onchange2()" class="main_select">
     <option value="">Danh mục cấp 3</option>

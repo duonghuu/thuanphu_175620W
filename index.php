@@ -67,7 +67,7 @@ $_SESSION['dong'] = lay_banner('dong');
             </div><!---END .main_content-->
         </section>
         <?php 
-        if($source=="index") include _template."layout/bottom.php";
+        include _template."layout/bottom.php";
         include _template."layout/footer.php";
         ?>
     </div><!---END .wapper-->

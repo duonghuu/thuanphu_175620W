@@ -14,7 +14,7 @@
                 <ul class="sub">
                     <?php phanquyen_menu('Danh mục cấp 1','product','man_danhmuc','san-pham'); ?>
                     <?php phanquyen_menu('Danh mục cấp 2','product','man_list','san-pham'); ?>
-                    <?php //phanquyen_menu('Danh mục cấp 3','product','man_cat','san-pham'); ?>
+                    <?php phanquyen_menu('Danh mục cấp 3','product','man_cat','san-pham'); ?>
                     <?php phanquyen_menu('Sản phẩm','product','man','san-pham'); ?>
                     <?php //phanquyen_menu('Quản lý hình thức thanh toán','httt','man',''); ?>
                     <?php //phanquyen_menu('Quản lý thương hiệu','news','man','thuonghieu'); ?>

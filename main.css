@@ -10297,13 +10297,19 @@ div.mxhft {
     border-bottom-right-radius: 30px; }
     .idx-tit h4 span, .idx-tit h4 a {
       color: #fff; }
-  .idx-tit p {
+  .idx-tit marquee {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     color: #4c4c4c;
     font-size: 20px;
     font-weight: 400;
     font-family: "Arial";
     margin: 0 0 0 23px; }
-    .idx-tit p a {
+    .idx-tit marquee a {
       font-weight: 700;
       color: #0d62d2; }
 
@@ -10351,7 +10357,13 @@ div.mxhft {
   box-sizing: border-box;
   display: flex;
   margin-left: -0.5833333333%;
-  margin-right: -0.5833333333%; }
+  margin-right: -0.5833333333%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
   .sptieubieu-flex .product-grid .pr-box {
     box-sizing: border-box;
     flex: 0 0 32.1666666667%;

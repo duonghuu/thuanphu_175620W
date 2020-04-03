@@ -21,8 +21,9 @@
   <div class="sptieubieu-bg">
     <div class="idx-tit">
       <h4><a href="<?= $link1 ?>"><?= $vdm["ten"] ?></a></h4>
-      <p>Hotline: <a href="tel:<?=preg_replace('/[^0-9]/','',$company['dienthoai']);?>">
-              <?= $company['dienthoai'] ?></a></p>
+      <marquee behavior="" direction="">Hotline: <a href="tel:<?=preg_replace('/[^0-9]/','',$company['dienthoai']);?>">
+              <?= $company['dienthoai'] ?></a></marquee>
+      <p></p>
     </div>
 
     <div class="sptieubieu-flex <?= $clsac ?>">

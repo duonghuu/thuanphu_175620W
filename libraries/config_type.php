@@ -48,7 +48,8 @@ switch($type){
 		break;
 
 		default:
-		$config['type'] = array('seo','ten','mota','gia','giakm','noibat','danhmuc','list','hinhanh','hinhthem','noidung');
+		$config['type'] = array('seo','ten','mota','gia','giakm','noibat','danhmuc','list','cat','hinhanh',
+			'hinhthem','noidung');
 		$config['ck'] = array('mota2');
 		$config['title'] = array('tieubieu'=>"Sản phẩm chính",'noibat'=>"Nổi bật",
 			'spmoi'=>"Mới",'spbanchay'=>"Bán chạy","mota"=>"Mô tả","toado"=>"Iframe google map",

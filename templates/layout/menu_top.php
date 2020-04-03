@@ -15,8 +15,17 @@
         <?= $vdm["ten"] ?></a>
         <?php 
         if($clshas == 'has-sub'){ echo '<ul>';
-        foreach($dmsp1 as $k => $v){ ?>
-        <li><a href="san-pham/<?= $v["tenkhongdau"] ?>-<?= $v["id"] ?>/"><?= $v["ten"] ?></a></li>
+        foreach($dmsp1 as $k => $v){ 
+          $dmsp2 = get_result("select ten$lang as ten,tenkhongdau,id,type from #_product_cat where type='san-pham' and
+           id_list='".$v["id"]."' and hienthi>0 order by stt asc");
+          ?>
+        <li><a href="san-pham/<?= $v["tenkhongdau"] ?>-<?= $v["id"] ?>/"><?= $v["ten"] ?></a>
+<?php if(!empty($dmsp2)){ echo '<ul>'; 
+foreach($dmsp2 as $key => $value){ 
+?>
+<li><a href="san-pham/<?= $value["tenkhongdau"] ?>/<?= $value["id"] ?>"><?= $value["ten"] ?></a></li>
+<?php } echo '</ul>'; }?>
+        </li>
       <?php } echo '</ul>'; }?>
       </li>
       <?php } ?>
